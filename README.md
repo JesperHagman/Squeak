@@ -14,3 +14,14 @@
 		W->>C: recources 200 OK	
 ```
 
+## Instruktion frontendutvecklare
+
+```javascript
+cd ~
+cd ws
+mkdir squeak
+cd squeak
+npm i
+code .
+npm start
+```
