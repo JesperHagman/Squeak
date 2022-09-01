@@ -1,26 +1,37 @@
 import { useState } from "react";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-
 const LoginComponent = () => {
 
-const auth = getAuth()
 const [message, setMessage] = useState("")
 const [details, setDetails] = useState({
     email: "",
     password: ""
 })
 
-const submitHandler = (e) => {
+const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, details)
-    .then(userCredentials => {
-        const user = userCredentials.user
+
+    fetch('testJson/data.json', {
+        headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json'
+        }
     })
-    .catch(error => setMessage(error.message))
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+       data.map((newData) => {
+        if(newData.email === details.email && newData.password === details.password) {
+            console.log("Logged in!")
+        } else {
+            console.log("Not logged in")
+        }
+       })
+    } )
+    
 }
     
     return (  
-        <form onSubmit={submitHandler}>
+        <form onSubmit={handleLogin}>
             <div>
                 <h2>Logga in</h2>
                     <div className='errorMessage'>
