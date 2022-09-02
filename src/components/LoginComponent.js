@@ -1,4 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
+
+export const validateInput = (str = "") => str.includes("@")
+
 const LoginComponent = () => {
 
 const [message, setMessage] = useState("")
@@ -40,7 +43,8 @@ const handleLogin = (e) => {
                     <div>
                         <label htmlFor="email">
                             <input type="email" name="email" id="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}></input>
-                        </label>                    
+                        </label>  
+                        {details.email && !validateInput(details.email) ? <Error>Email is not valid</Error> : null}                  
                         <label htmlFor="password">
                             <input type="password" name="password" id="password" placeholder="Lösenord" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input>
                         </label>                    
