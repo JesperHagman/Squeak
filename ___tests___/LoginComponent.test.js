@@ -1,17 +1,27 @@
-import {LoginComponent, validateInput} from '../src/components/LoginComponent'
-import React, {render, screen} from '@testing-library/react'
+import React from 'react'
+import LoginComponent from '../src/components/LoginComponent'
+import { render } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/dom'
 import '@testing-library/jest-dom'
 
 
 describe("login", () => {
-    test('Validate function should pass on correct input', () => {
-    const text = 'text@test.com'
-    expect(validateInput(text)).toBe(true)
+    test('should contain an input field for password', () => {
+      render(<LoginComponent/>)
+      const password = screen.getAllByPlaceholderText('Lösenord')
+      expect(password).toBeInTheDocument()
     })
-
-    test('Validate function should fail on incorrect input', () => {
-    const text = 'text'
-    expect(validateInput(text)).not.toBe(true)
+    test('should contain an input field for email', () => {
+      render(<LoginComponent/>)
+      const email = screen.getByLabelText('E-mail:')
+      expect(email).toBeInTheDocument()
     })
+    test('Email input should accept text', () => {
+        const { getByLabelText } = render(<LoginComponent/>)
+        const emailInputNode = getByLabelText('E-mail:')
 
+        expect(emailInputNode).toMatch("")
+        fireEvent.change(emailInputNode, {target: {input: 'testing'}})
+        expect(emailInputNode).toMatch("testing")
+      })
 })

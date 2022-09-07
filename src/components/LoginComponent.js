@@ -34,24 +34,27 @@ const handleLogin = (e) => {
 }
     
     return (  
-        <form onSubmit={handleLogin}>
             <div>
+        <form onSubmit={handleLogin}>
                 <h2>Logga in</h2>
                     <div className='errorMessage'>
                         {message}
                     </div>
                     <div>
-                        <label htmlFor="email">
-                            <input type="email" name="email" id="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email}></input>
-                        </label>  
-                        {details.email && !validateInput(details.email) ? <Error>Email is not valid</Error> : null}                  
+
+                        <label htmlFor="email" >E-mail:</label> 
+                                <input id='email' name="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                       
+                        {/* {details.email && !validateInput(details.email) ? {message} : null}                   */}
                         <label htmlFor="password">
-                            <input type="password" name="password" id="password" placeholder="Lösenord" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input>
+
+                                <input type="password" data-testid='password' id='password' name="password" placeholder="Lösenord" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input>
+
                         </label>                    
                     </div>
                     <input type="submit" value="Logga in"></input>
-            </div>
         </form>
+            </div>
             
     );
 }
