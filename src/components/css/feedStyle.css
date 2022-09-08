@@ -1,43 +1,67 @@
 #container {
   display: flex;
-  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .left-sidebar {
   display: flex;
   flex: 1;
-  height: 80vh;
+  height: 100vh;
   justify-content: center;
 }
 
 .right-sidebar {
   flex: 1;
+
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+img {
+  border: 1px solid rgb(0, 110, 29);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .feed {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
   flex: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
+  background: rgba(255, 255, 255, 0.01);
+
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+}
+input:focus {
+  outline: none;
+}
 .squeak-text {
-  height: 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
+  border: none;
+  height: 150px;
   width: 400px;
+  margin-top: 50px;
   border-radius: 10px;
 }
 .submit-squeak {
   margin-top: 10px;
 }
 .squeak-container {
+  border-top: 1px solid rgba(6, 6, 6, 0.073);
+  background-color: white;
   margin-top: 50px;
-  background-color: rgb(230, 230, 230);
+  overflow-x: scroll;
   width: 100%;
-  height: 100%;
+  height: 67vh;
   display: flex;
   justify-content: center;
 }
