@@ -20,10 +20,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "start-dev": "env-cmd -f .dev.env npm start",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "test": "jest",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -44,7 +44,12 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.5.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
