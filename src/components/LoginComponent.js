@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+const fetchURL = 'http://localhost:5001/api/auth/login'
+
 
 export const validateInput = (str = "") => str.includes("@")
 
@@ -13,20 +15,26 @@ const [details, setDetails] = useState({
 const handleLogin = (e) => {
     e.preventDefault();
 
-    fetch('testJson/data.json', {
+    const user = {
+        email: details.email,
+        password: details.password
+      }
+
+    fetch(fetchURL, {
+        method: 'POST',
         headers: {
         'content-type': 'application/json',
-        'accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(user)
     })
     .then(res => res.json())
     .then(data => {
         console.log(data)
        data.map((newData) => {
         if(newData.email === details.email && newData.password === details.password) {
-            console.log("Logged in!")
+           return console.log("Logged in!")
         } else {
-            console.log("Not logged in")
+           return console.log("Not logged in")
         }
        })
     } )
@@ -42,8 +50,8 @@ const handleLogin = (e) => {
                     </div>
                     <div>
 
-                        <label htmlFor="email" >E-mail:</label> 
-                                <input id='email' name="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                        <label htmlFor="email" /> 
+                                <input id='email' data-testid='email' name="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
                        
                         {/* {details.email && !validateInput(details.email) ? {message} : null}                   */}
                         <label htmlFor="password">
