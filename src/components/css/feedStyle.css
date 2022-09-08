@@ -1,6 +1,7 @@
 #container {
   display: flex;
   background-color: rgba(0, 0, 0, 0.02);
+  height: 100vh;
 }
 
 .left-sidebar {
@@ -56,12 +57,24 @@ input:focus {
   margin-top: 10px;
 }
 .squeak-container {
-  border-top: 1px solid rgba(6, 6, 6, 0.073);
-  background-color: white;
-  margin-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.073);
+  background-color: rgb(255, 255, 255);
+
   overflow-x: scroll;
   width: 100%;
-  height: 67vh;
+  height: 500px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.post-container {
+  margin-top: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
