@@ -2,21 +2,16 @@ import React from "react";
 import { profilePic } from "../data";
 import "./css/postStyle.css";
 
-function Post() {
+function Post({ item }) {
   return (
     <div className="post">
-      <div>
+      <div className="post-top">
         {" "}
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          omnis excepturi corrupti saepe beatae, ratione consequuntur est natus
-          ipsam eligendi earum fugit pariatur ad ullam, nobis illo iste.
-          Nostrum, atque!
-        </p>
+        <p>{item.desc}</p>
       </div>
       <div className="post-bottom">
         {" "}
-        <h4>{profilePic.username}</h4>
+        <h4>{item.username}</h4>
       </div>
     </div>
   );

@@ -1,12 +1,16 @@
+body {
+}
 #container {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: #f0f2f5;
+  padding-top: 100px;
   height: 100vh;
 }
 
 .left-sidebar {
   display: flex;
   flex: 1;
+
   height: 100vh;
   justify-content: center;
 }
@@ -29,20 +33,32 @@ img {
   margin-top: 50px;
 }
 
+.input-container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  width: 69%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
 .feed {
   flex: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background: rgba(255, 255, 255, 0.01);
-
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.6px);
-  -webkit-backdrop-filter: blur(4.6px);
+  overflow-x: hidden;
+  border-left: 1px solid rgba(0, 0, 0, 0.229);
+  border-right: 1px solid rgba(0, 0, 0, 0.229);
 }
 input:focus {
   outline: none;
+}
+
+input {
+  background-color: #0000000e;
 }
 .squeak-text {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
@@ -50,7 +66,7 @@ input:focus {
   border: none;
   height: 150px;
   width: 400px;
-  margin-top: 50px;
+
   border-radius: 10px;
 }
 .submit-squeak {
@@ -59,21 +75,13 @@ input:focus {
 .squeak-container {
   padding-bottom: 50px;
   border-top: 1px solid rgba(255, 255, 255, 0.073);
-  background-color: rgb(255, 255, 255);
 
-  overflow-x: scroll;
   width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
 }
 .post-container {
-  margin-top: 600px;
+  padding-top: 50px;
   display: flex;
-  justify-content: center;
+
   flex-direction: column;
   align-items: center;
   gap: 15px;

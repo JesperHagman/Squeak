@@ -9,18 +9,20 @@ function Feed() {
     <div id="container">
       <div className="left-sidebar">left</div>
       <div className="feed">
-        <input className="squeak-text" type="text" />
+        <div className="input-container">
+          <input className="squeak-text" type="text" />
 
-        <button className="submit-squeak">Squeak</button>
-
+          <button className="submit-squeak">Squeak</button>
+        </div>
         <div className="squeak-container">
           <div className="post-container">
-            {profilePic.map(() => (
-              <Post />
+            {profilePic.map((item) => (
+              <Post item={item} key={item.id} />
             ))}
           </div>
         </div>
       </div>
+
       <div className="right-sidebar">
         <img src={profilePic[0].img} />
         <a href="">Account</a>
