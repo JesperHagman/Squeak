@@ -6,7 +6,7 @@ export const validateInput = (str = "") => str.includes("@")
 
 const LoginComponent = () => {
 
-const [message, setMessage] = useState("")
+const [error, setError] = useState("")
 const [details, setDetails] = useState({
     email: "",
     password: ""
@@ -28,17 +28,16 @@ const handleLogin = (e) => {
         body: JSON.stringify(user)
     })
     .then(res => res.json())
-    .then(data => {
+    .then((data) => {
         console.log(data)
-       data.map((newData) => {
-        if(newData.email === details.email && newData.password === details.password) {
-           return console.log("Logged in!")
-        } else {
-           return console.log("Not logged in")
-        }
-       })
-    } )
-    
+        if (data.loggedIn) {
+            console.log("Logged in!")
+          
+          } else {
+            setError(data.message)
+            console.log(data.message)
+          }
+      })
 }
     
     return (  
@@ -46,7 +45,7 @@ const handleLogin = (e) => {
         <form onSubmit={handleLogin}>
                 <h2>Logga in</h2>
                     <div className='errorMessage'>
-                        {message}
+                        {error}
                     </div>
                     <div>
 
