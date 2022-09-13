@@ -10,10 +10,11 @@ export default function Register() {
 
       const registerUser = {
           name: details.name,
-          username:  details.username,
+                                username:  details.username,
           email: details.email,
-          password: details.password,
-          phone: details.phone
+                password: details.password,
+          
+                phone: details.phone
       }
 
      fetch('http://localhost:5001/api/auth/register', {
