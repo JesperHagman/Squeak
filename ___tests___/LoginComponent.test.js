@@ -8,20 +8,19 @@ import '@testing-library/jest-dom'
 describe("login", () => {
     test('should contain an input field for password', () => {
       render(<LoginComponent/>)
-      const password = screen.getAllByPlaceholderText('Lösenord')
+      const password = screen.getByTestId('password')
       expect(password).toBeInTheDocument()
     })
     test('should contain an input field for email', () => {
       render(<LoginComponent/>)
-      const email = screen.getByLabelText('E-mail:')
+      const email = screen.getByTestId('email')
       expect(email).toBeInTheDocument()
     })
     test('Email input should accept text', () => {
-        const { getByLabelText } = render(<LoginComponent/>)
-        const emailInputNode = getByLabelText('E-mail:')
+        const { getByTestId } = render(<LoginComponent/>)
+        const emailInputNode = getByTestId('email')
 
-        expect(emailInputNode).toMatch("")
-        fireEvent.change(emailInputNode, {target: {input: 'testing'}})
-        expect(emailInputNode).toMatch("testing")
+        fireEvent.change(emailInputNode, { target: { input: 'super' } })
+        expect(emailInputNode.input).toMatch('super')
       })
 })

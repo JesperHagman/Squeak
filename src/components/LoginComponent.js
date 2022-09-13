@@ -1,73 +1,76 @@
 import React, { useState } from "react";
+const fetchURL = 'http://localhost:5001/api/auth/login'
 
-export const validateInput = (str = "") => str.includes("@");
 
 const LoginComponent = () => {
-  const [message, setMessage] = useState("");
-  const [details, setDetails] = useState({
+
+const [error, setError] = useState("")
+const [details, setDetails] = useState({
     email: "",
     password: "",
   });
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    fetch("testJson/data.json", {
-      headers: {
-        "content-type": "application/json",
-        accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        data.map((newData) => {
-          if (
-            newData.email === details.email &&
-            newData.password === details.password
-          ) {
-            console.log("Logged in!");
-          } else {
-            console.log("Not logged in");
+    debugger
+    if(details.email === "" || !details.email.includes('@') || !details.email.includes('.')){
+        setError('Please provide a valid email adress')
+    } else if(details.password === "") {
+        setError('Please provide a password')
+    }
+    
+    else {
+        const user = {
+            email: details.email,
+            password: details.password
           }
-        });
-      });
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleLogin}>
-        <h2>Logga in</h2>
-        <div className="errorMessage">{message}</div>
-        <div>
-          <label htmlFor="email">E-mail:</label>
-          <input
-            id="email"
-            name="email"
-            placeholder="E-mail"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-
-          {/* {details.email && !validateInput(details.email) ? {message} : null}                   */}
-          <label htmlFor="password">
-            <input
-              type="password"
-              data-testid="password"
-              id="password"
-              name="password"
-              placeholder="Lösenord"
-              onChange={(e) =>
-                setDetails({ ...details, password: e.target.value })
+    
+        fetch(fetchURL, {
+            method: 'POST',
+            headers: {
+            'content-type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data)
+            if (data.loggedIn) {
+                console.log("Logged in!")
+              } else {
+                setError(data.message)
+                console.log(data.message)
               }
-              value={details.password}
-            ></input>
-          </label>
-        </div>
-        <input type="submit" value="Logga in"></input>
-      </form>
-    </div>
-  );
-};
+          })
+    }
 
+
+   
+}
+    
+    return (  
+            <div data-cy="loginform">
+                <h2>Logga in</h2>
+        <form onSubmit={handleLogin}>
+                    <div className='errorMessage' data-testid='errorMessage'>
+                        {error}
+                    </div>
+                    <div>
+
+                        <label htmlFor="email" /> 
+                                <input type="text" id='email' data-testid='email' name="email" placeholder="E-mail" onChange={e => setDetails({...details, email: e.target.value})} value={details.email} />
+                 
+                        <label htmlFor="password">
+
+                                <input type="password" data-testid='password' id='password' name="password" placeholder="Password" onChange={e => setDetails({...details, password: e.target.value})} value={details.password}></input>
+
+                        </label>                    
+                    </div>
+                    <input type="submit" value="Logga in"></input>
+        </form>
+            </div>
+            
+    );
+}
+ 
 export default LoginComponent;
