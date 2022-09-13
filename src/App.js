@@ -10,10 +10,9 @@ import Header from "./components/header.js";
 function App() {
   return (
     <Router>
-      <Header />
-      <Feed />
       <Routes>
         <Route path="/" />
+        <Route path="/feed" element={<Feed />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<ErrorPage />} />

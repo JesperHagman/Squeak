@@ -151,7 +151,9 @@ button:not(:disabled):active {
   color: rgb(0, 0, 0);
   resize: none;
 }
-
+.squeak-text p {
+  color: white;
+}
 .submit-squeak {
   margin-top: 10px;
 }

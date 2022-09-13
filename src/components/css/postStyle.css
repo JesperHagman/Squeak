@@ -6,7 +6,7 @@
   color: white;
   height: auto;
   min-width: 30%;
-  max-width: 60%;
+  max-width: 80%;
   height: auto;
   contain: content;
   overflow: auto;
@@ -24,6 +24,7 @@
   background-color: #282a35;
   font-size: 12px;
   margin-bottom: 0;
+  border-radius: 5px;
 }
 
 .post-bottom {
