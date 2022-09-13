@@ -3,6 +3,7 @@ import { profilePic } from "../data";
 import "./css/feedStyle.css";
 import Post from "./post";
 import { useState } from "react";
+import Header from "./header";
 
 function Feed() {
   return (
@@ -24,9 +25,16 @@ function Feed() {
       </div>
 
       <div className="right-sidebar">
-        <img src={profilePic[0].img} />
-        <a href="">Account</a>
-        <a href="">Logout</a>
+        <div className="profile-upper">
+          {" "}
+          <img src={profilePic[0].img} />
+          <h4>{profilePic[0].username}</h4>
+        </div>
+
+        <ul>
+          <li>PROFILE</li>
+          <li>LOGOUT</li>
+        </ul>
       </div>
     </div>
   );

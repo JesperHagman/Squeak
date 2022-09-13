@@ -1,7 +1,11 @@
 import React from "react";
-
-function header() {
-  return <div className="container">header</div>;
+import "./css/headerStyle.css";
+function Header() {
+  return (
+    <div className="container">
+      <h3>SQUEAK</h3>
+    </div>
+  );
 }
 
-export default header;
+export default Header;
