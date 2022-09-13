@@ -1,21 +1,17 @@
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
+import Register from './components/RegisterComponent'
+import LoginComponent from './components/LoginComponent'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Redux
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/'/>
+        <Route path='/login' element={ <LoginComponent/> }/>
+        <Route path='/register' element={ <Register/> } />
+      </Routes>
+    </Router>
 
   );
 }

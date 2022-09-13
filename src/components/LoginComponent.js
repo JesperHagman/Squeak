@@ -1,6 +1,6 @@
 const LoginComponent = () => {
-    const 
-    return (  );
+    
+    return ( "hej" );
 }
  
 export default LoginComponent;
