@@ -12,6 +12,7 @@ function Post({ post }) {
       <div className="post-bottom">
         {" "}
         <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
+        <p className="comment-style">Comment</p>
         <h4>{post.username}</h4>
       </div>
     </div>

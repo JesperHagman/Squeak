@@ -3,7 +3,7 @@ export const profilePic = [
     id: 1,
     desc: "hej jag heter Salim1, vad heter du?",
     username: "salimno1",
-    img: "https://www.vitarplats.se/img/salim.png",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLqfekg_kitC_QJ5kgBUTh2tt5EIcxEnQDQ&usqp=CAU",
   },
   { id: 2, desc: "hej jag heter Salim2, vad heter du?", username: "salimno1" },
   {

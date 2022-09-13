@@ -67,24 +67,25 @@ function Feed() {
           </nav>
         </div>
         <div className="feed">
-          <div className="input-container">
-            <textarea
-              className="squeak-text"
-              type="text"
-              placeholder="What's on your mind?"
-            />
+          <div className="feedContainer">
+            <div className="input-container">
+              <textarea
+                className="squeak-text"
+                type="text"
+                placeholder="What's on your mind?"
+              />
 
-            <button className="submit-squeak">Squeak</button>
-          </div>
-          <div className="squeak-container">
-            <div className="post-container">
-              {posts.map((p) => (
-                <Post post={p} />
-              ))}
+              <button className="submit-squeak">Squeak</button>
+            </div>
+            <div className="squeak-container">
+              <div className="post-container">
+                {posts.map((p) => (
+                  <Post post={p} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
         <div className="right-sidebar">
           <div className="profile-upper">
             {" "}
