@@ -4,8 +4,20 @@ import "./css/feedStyle.css";
 import Post from "./post";
 import { useState } from "react";
 import Header from "./header";
+import { useEffect } from "react";
+import axios from "axios";
 
 function Feed() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await axios.get("http://localhost:5001/api/posts");
+      setPosts(res.data);
+      console.log(res);
+    };
+    fetchPosts();
+  }, []);
+
   return (
     <div id="container">
       <div className="left-sidebar">
@@ -64,8 +76,8 @@ function Feed() {
         </div>
         <div className="squeak-container">
           <div className="post-container">
-            {profilePic.map((item) => (
-              <Post item={item} key={item.id} />
+            {posts.map((p) => (
+              <Post post={p} />
             ))}
           </div>
         </div>

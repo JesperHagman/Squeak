@@ -10,6 +10,8 @@ import Header from "./components/header.js";
 function App() {
   return (
     <Router>
+      <Header />
+      <Feed />
       <Routes>
         <Route path="/" />
         <Route path="/login" element={<LoginComponent />} />

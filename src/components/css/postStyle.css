@@ -5,6 +5,7 @@
   padding: 10px;
   color: white;
   height: auto;
+  min-width: 40%;
   max-width: 90%;
   border: 2px solid black;
   border-radius: 10px;
