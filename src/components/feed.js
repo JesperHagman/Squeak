@@ -8,10 +8,57 @@ import Header from "./header";
 function Feed() {
   return (
     <div id="container">
-      <div className="left-sidebar">left</div>
+      <div className="left-sidebar">
+        {" "}
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+              <a href="">
+                <li>
+                  <p>START</p>
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  {" "}
+                  <p>START</p>
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  {" "}
+                  <p>START</p>
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  {" "}
+                  <p>START</p>
+                </li>
+              </a>
+              <a href="">
+                <li>
+                  {" "}
+                  <p>START</p>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div className="feed">
         <div className="input-container">
-          <input className="squeak-text" type="text" />
+          <textarea
+            className="squeak-text"
+            type="text"
+            placeholder="What's on your mind?"
+          />
 
           <button className="submit-squeak">Squeak</button>
         </div>
@@ -30,11 +77,6 @@ function Feed() {
           <img src={profilePic[0].img} />
           <h4>{profilePic[0].username}</h4>
         </div>
-
-        <ul>
-          <li>PROFILE</li>
-          <li>LOGOUT</li>
-        </ul>
       </div>
     </div>
   );
