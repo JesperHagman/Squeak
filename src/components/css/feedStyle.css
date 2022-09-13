@@ -105,6 +105,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-left: 50px;
 }
 
 button:not(:disabled):hover {
@@ -144,9 +145,13 @@ button:not(:disabled):active {
 .squeak-text {
   font-size: xx-large;
   border: none;
-  height: 200px;
-
-  background-color: #282a3500;
+  height: 100px;
+  width: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  margin-left: 50px;
+  font-size: 20px;
+  background-color: #282a350a;
   color: rgb(0, 0, 0);
   resize: none;
 }
