@@ -17,6 +17,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "save-dev": "^0.0.1-security",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -48,7 +49,12 @@
   },
   "devDependencies": {
     "husky": "^8.0.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
     "jest": "^27.5.1",
     "nodemon": "^2.0.19"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
