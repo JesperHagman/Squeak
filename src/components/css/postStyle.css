@@ -2,17 +2,21 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 5px;
   color: white;
   height: auto;
-  min-width: 40%;
-  max-width: 90%;
+  min-width: 30%;
+  max-width: 60%;
+  height: auto;
+  contain: content;
+  overflow: auto;
   border: 2px solid black;
   border-radius: 10px;
 }
-.post p {
+.post-p {
   background-color: #282a35;
   padding: 10px;
+  word-break: break-all;
   border-radius: 5px;
 }
 .post h4 {
@@ -25,10 +29,18 @@
 .post-bottom {
   height: 50%;
   display: flex;
-  justify-content: end;
+
+  display: flex;
+  justify-content: space-between;
 }
 .post-top {
   height: 50%;
   display: flex;
   justify-content: center;
+}
+.createdAt {
+  font-size: 10px;
+  height: 10px;
+  color: black;
+  margin-top: 20px;
 }

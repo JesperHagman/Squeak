@@ -7,10 +7,11 @@ function Post({ post }) {
     <div className="post">
       <div className="post-top">
         {" "}
-        <p>{post.desc}</p>
+        <p className="post-p">{post.desc}</p>
       </div>
       <div className="post-bottom">
         {" "}
+        <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
         <h4>{post.username}</h4>
       </div>
     </div>
