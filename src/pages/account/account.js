@@ -36,7 +36,7 @@ export default function Account() {
                     <p>MY SQUEAKS</p>
                   </li>
                 </a>
-                <a href="">
+                <a href="/account">
                   <li>
                     {" "}
                     <p>ACCOUNT SETTINGS</p>
@@ -100,6 +100,7 @@ export default function Account() {
             <button className="info-button">Change Password</button>
           </div>
         </div>
+
         <div className="right-container"></div>
       </div>
     </>

@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" />
-        <Route path="/profile" element={<Account />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/register" element={<Register />} />

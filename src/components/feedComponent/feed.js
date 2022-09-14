@@ -39,7 +39,7 @@ function Feed() {
                     <p>START</p>
                   </li>
                 </Link>
-                <a href="/profile">
+                <a href="">
                   <li>
                     {" "}
                     <p>PROFILE</p>
@@ -51,7 +51,7 @@ function Feed() {
                     <p>MY SQUEAKS</p>
                   </li>
                 </a>
-                <a href="">
+                <a href="/account">
                   <li>
                     {" "}
                     <p>ACCOUNT SETTINGS</p>

@@ -12,7 +12,7 @@
   height: 90vh;
 }
 .main-container {
-  flex: 3;
+  flex: 4;
   height: 94.5vh;
   border-left: 1px solid rgba(0, 0, 0, 0.275);
   border-right: 1px solid rgba(0, 0, 0, 0.275);
@@ -26,6 +26,7 @@
   margin-left: 50px;
   width: 60%;
   height: 40px;
+
   border: 1px solid rgba(0, 0, 0, 0.395);
   background-color: white;
 }
@@ -62,6 +63,12 @@ input:focus {
 }
 .picture-btn {
   font-size: 15px;
+}
+.picture-btn2 {
+  font-size: 15px;
+  background-color: rgb(217, 0, 0);
+  align-self: baseline;
+  margin-left: 250px;
 }
 #profilePic-span {
   margin-bottom: 0;
