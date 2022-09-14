@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./components/RegisterComponent";
 import LoginComponent from "./components/LoginComponent";
 import ErrorPage from "./components/ErrorPage";
-import Feed from "./components/feed.js";
-import Post from "./components/post.js";
-import Header from "./components/header.js";
+import Feed from "./components/feedComponent/feed";
 
 function App() {
   return (

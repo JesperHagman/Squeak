@@ -1,12 +1,13 @@
 import React from "react";
-import { profilePic } from "../data";
-import "./css/feedStyle.css";
-import Post from "./post";
+import { profilePic } from "../../data";
+import "./feedStyle.css";
+import Post from "../postComponent/post";
 import { useState } from "react";
-import Header from "./header";
+import Header from "../headerComponent/header";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 function Feed() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {

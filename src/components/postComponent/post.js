@@ -1,6 +1,6 @@
 import React from "react";
-import { profilePic } from "../data";
-import "./css/postStyle.css";
+
+import "./postStyle.css";
 
 function Post({ post }) {
   return (
