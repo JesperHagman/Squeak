@@ -1,0 +1,68 @@
+.profile-container {
+  padding-top: 50px;
+  display: flex;
+}
+.left-container {
+  flex: 1;
+  height: 90vh;
+}
+
+.right-container {
+  flex: 1;
+  height: 90vh;
+}
+.main-container {
+  flex: 3;
+  height: 94.5vh;
+  border-left: 1px solid rgba(0, 0, 0, 0.275);
+  border-right: 1px solid rgba(0, 0, 0, 0.275);
+}
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.settings-container input {
+  margin-left: 50px;
+  width: 60%;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.395);
+  background-color: white;
+}
+.settings-container img {
+  margin-left: 50px;
+  height: 100px;
+  width: 100px;
+}
+.settings-container p {
+  font-weight: bold;
+  font-size: 12px;
+}
+.settings-container span {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.settings-container label {
+  width: 200px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.info-button {
+  margin-top: 10px;
+  font-size: 15px;
+  margin-left: 64%;
+  width: 180px;
+  text-align: center;
+}
+.picture-btn {
+  font-size: 15px;
+}
+#profilePic-span {
+  margin-bottom: 0;
+}

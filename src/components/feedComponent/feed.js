@@ -39,7 +39,7 @@ function Feed() {
                     <p>START</p>
                   </li>
                 </Link>
-                <a href="">
+                <a href="/profile">
                   <li>
                     {" "}
                     <p>PROFILE</p>
