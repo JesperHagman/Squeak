@@ -81,7 +81,7 @@ const RegisterComponent = () => {
                 <div>
                     <label htmlFor='username'>Username:</label>
                     <input type="text" name="username" id="username" data-testid='username'
-                    onChange={e =>setDetails({...details, name: e.target.value})} value={details.name}/>
+                    onChange={e =>setDetails({...details, username: e.target.value})} value={details.username}/>
                 </div>
 
                 <input type="submit" value="REGISTER"/>
