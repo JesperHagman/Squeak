@@ -81,21 +81,21 @@ export default function Account() {
               </label>
               <input type="number" />
             </span>
-            <button className="info-button">Change Information</button>
+            <button className="info-button">Update Information</button>
             <br />
             <br />
 
             <span>
               <label>
-                <p>Password</p>{" "}
+                <p>New Password</p>{" "}
               </label>
-              <input type="text" />
+              <input type="password" />
             </span>
             <span id="profilePic-span">
               <label>
                 <p>Repeat Password</p>{" "}
               </label>
-              <input type="text" />
+              <input type="password" />
             </span>
             <button className="info-button">Change Password</button>
           </div>
