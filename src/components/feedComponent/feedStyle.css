@@ -154,6 +154,7 @@ button:not(:disabled):active {
   background-color: #282a350a;
   color: rgb(0, 0, 0);
   resize: none;
+  border-radius: 10px;
 }
 .squeak-text p {
   color: white;
