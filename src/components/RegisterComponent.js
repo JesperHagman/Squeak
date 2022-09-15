@@ -16,13 +16,16 @@ const RegisterComponent = () => {
           password: details.password,
           phone: details.phone
       }
-
-      if(details.email === "" || !details.email.includes('@') || !details.email.includes('.')){
+     if(details.name === ""){
+        setError('Please provide your name')
+    } else if(details.phone === ""){
+         setError('Please provide your phonenumber')
+     } else if(details.email === "" || !details.email.includes('@') || !details.email.includes('.')){
         setError('Please provide a valid email adress')
     } else if(details.password === "") {
         setError('Please provide a password')
-    } else if (details.name === "") {
-        setError('Please provide you´r name')
+    } else if (details.username === "") {
+        setError('Please provide a username')
     } else { 
         fetch('http://localhost:5001/api/auth/register', {
             method: "POST",
