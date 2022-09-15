@@ -12,6 +12,17 @@ Squeak is s social media platform where you can publish messages for everyone to
 
 ## Packages:
 - React
+- React-router-dom
+- Axios
+- Save-dev
+- Eslint
+- Express
+- Mongoose
+- Styled components
+- Web vitals
+- Jest
+- Husky
+- Nodemon
 
 
 ## Authentification flow
