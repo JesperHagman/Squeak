@@ -5,6 +5,7 @@ import LoginComponent from "./components/LoginComponent";
 import ErrorPage from "./components/ErrorPage";
 import Feed from "./components/feedComponent/feed";
 import Account from "./pages/account/account";
+import Login from "./components/loginTest";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" />
         <Route path="/account" element={<Account />} />
+        <Route path="/logintest" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/register" element={<Register />} />
