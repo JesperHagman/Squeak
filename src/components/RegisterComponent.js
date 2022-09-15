@@ -21,6 +21,8 @@ const RegisterComponent = () => {
         setError('Please provide a valid email adress')
     } else if(details.password === "") {
         setError('Please provide a password')
+    } else if (details.name === "") {
+        setError('Please provide you´r name')
     } else { 
         fetch('http://localhost:5001/api/auth/register', {
             method: "POST",
@@ -41,12 +43,16 @@ const RegisterComponent = () => {
 
 
   return (
-    <div data-cy="registerform">
+    <div data-testid="registerform">
       <form onSubmit={registerHandler}>
             <h2>Registrera</h2>
 
+            <div className='errorMessage' data-testid='errorMessage'>
+                 {error} 
+            </div>
+
             <div>
-                <div className='errorMessage' data-testid='errorMessage'> {error} </div>
+                
                 
                 <div>
                     <label htmlFor='name'>Name:</label>
