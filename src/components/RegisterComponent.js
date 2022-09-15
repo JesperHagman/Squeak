@@ -57,31 +57,31 @@ const RegisterComponent = () => {
                 <div>
                     <label htmlFor='name'>Name:</label>
                     <input type="text" name="name" id="name" data-testid='name'
-                    required onChange={e =>setDetails({...details, name: e.target.value})} value={details.name}/>
+                    onChange={e =>setDetails({...details, name: e.target.value})} value={details.name}/>
                 </div>
 
                 <div>
                     <label htmlFor='phone'>Phone:</label>
                     <input type="text" phone="phone" id="phone" data-testid='phone'
-                    required onChange={e =>setDetails({...details, phone: e.target.value})} value={details.phone}/>
+                    onChange={e =>setDetails({...details, phone: e.target.value})} value={details.phone}/>
                 </div>
 
                 <div>
                     <label htmlFor='email'>Email:</label>
                     <input type="text" id='email' data-testid='email' name="email" placeholder="E-mail" 
-                    required onChange={e =>setDetails({...details, email: e.target.value})} value={details.email}/>
+                    onChange={e =>setDetails({...details, email: e.target.value})} value={details.email}/>
                 </div>
 
                 <div>
                     <label htmlFor='password'>Password:</label>
                     <input type="password" password="password" id="password" data-testid='password'
-                    required onChange={e =>setDetails({...details, password: e.target.value})} value={details.password}/>
+                    onChange={e =>setDetails({...details, password: e.target.value})} value={details.password}/>
                 </div>
 
                 <div>
                     <label htmlFor='username'>Username:</label>
                     <input type="text" name="username" id="username" data-testid='username'
-                    required onChange={e =>setDetails({...details, name: e.target.value})} value={details.name}/>
+                    onChange={e =>setDetails({...details, name: e.target.value})} value={details.name}/>
                 </div>
 
                 <input type="submit" value="REGISTER"/>
