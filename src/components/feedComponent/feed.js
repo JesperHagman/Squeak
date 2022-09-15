@@ -7,9 +7,12 @@ import Header from "../headerComponent/header";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/context";
+import { useContext } from "react";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
+  const{dispatch} = useContext(Context)
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("http://localhost:5001/api/posts");
@@ -18,6 +21,11 @@ function Feed() {
     };
     fetchPosts();
   }, []);
+
+  const handleLogout =()=>{
+dispatch({type:"LOGOUT"})
+
+  }
 
   return (
     <>
@@ -58,7 +66,7 @@ function Feed() {
                   </li>
                 </a>
                 <a href="">
-                  <li>
+                  <li onClick={handleLogout}>
                     {" "}
                     <p>LOGOUT</p>
                   </li>
