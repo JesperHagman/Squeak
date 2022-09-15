@@ -49,7 +49,7 @@ const [details, setDetails] = useState({
 }
     
     return (  
-            <div data-cy="loginform">
+            <div data-testid="loginform">
                 <h2>Logga in</h2>
         <form onSubmit={handleLogin}>
                     <div className='errorMessage' data-testid='errorMessage'>
