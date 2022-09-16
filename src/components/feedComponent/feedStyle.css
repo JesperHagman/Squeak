@@ -169,7 +169,7 @@ button:not(:disabled):active {
   width: 70%;
 }
 .post-container {
-  padding-top: 50px;
+  padding-top: 60px;
   display: flex;
 
   flex-direction: column;
