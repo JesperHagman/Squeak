@@ -1,8 +1,9 @@
 import React from 'react'
 import RegisterComponent from '../src/components/RegisterComponent'
-import { render } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import { screen, fireEvent } from '@testing-library/dom'
 import '@testing-library/jest-dom'
+
 
 
 
@@ -53,20 +54,23 @@ describe("Username field is available", () => {
 })
 
 
-/* describe('Email is correct', () => {
-  test('Email input should accept text', () => {
+describe('Email is correct', () => {
+  test('Email input should include @ and .', () => {
     render(<RegisterComponent/>)
-    const form = screen.getByTestId('registerform')
     const emailInputNode = screen.getByTestId('email')
     const errorMessage = screen.getByTestId('errorMessage')
-    
+    const submitButton = screen.getByTestId('submit')
 
-    fireEvent.change(emailInputNode, { target: { value: 'super', input: 'super' } })
-    fireEvent.submit(form)
-    expect(() => {errorMessage}).toThrow('Please provide a valid email adress');
-    console.log(errorMessage.value)
+    
+    fireEvent.change(emailInputNode, { target: { name: 'email', value: 'super', } })
+    fireEvent.click(submitButton)
+    
+    const message = within(errorMessage).getByText('Please provide a valid email adress');
+    
+    console.log(errorMessage)
+    
     console.log(emailInputNode.value)
-    console.log(emailInputNode.input)
-    expect(errorMessage.input).toBe('Please provide a valid email adress')
   })  
-}) */
+})
+
+
