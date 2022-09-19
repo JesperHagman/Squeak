@@ -55,7 +55,7 @@ describe("Username field is available", () => {
 
 
 describe('Email is correct', () => {
-  test('Email input should include @ and .', () => {
+  test.skip('Email input should include @ and .', () => {
     render(<RegisterComponent/>)
     const emailInputNode = screen.getByTestId('email')
     const errorMessage = screen.getByTestId('errorMessage')
