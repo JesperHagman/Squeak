@@ -65,7 +65,7 @@ describe('Email is correct', () => {
     fireEvent.change(emailInputNode, { target: { name: 'email', value: 'super', } })
     fireEvent.click(submitButton)
     
-    const message = within(errorMessage).getByText('Please provide a valid email adress');
+    // const message = within(errorMessage).getByText('Please provide a valid email adress');
     
     console.log(errorMessage)
     
