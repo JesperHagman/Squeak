@@ -8,11 +8,33 @@ Squeak is a social media platform where you can publish messages for everyone to
 * [Technologies](#Technologies:)
 * [Packages](#Packages) 
 * [Authentification flow](#Authentification flow)
+
 ## TTFHW
 
-```bash
+Start with cloning the repository by copying this code in to your terminal.
+
+For ** npm ** : 
+
+``` bash
+
 cd ws
+git clone https://github.com/JesperHagman/Squeak
+npm install
+
 ```
+For ** yarn ** :
+
+``` bash
+
+cd ws
+git clone https://github.com/JesperHagman/Squeak
+yarn install
+
+``` 
+
+To run the project, open your terminal and type ** npm start ** or ** yarn start **.
+
+Open [http://localhost:3000](http://localhost:3000) to see the project in your browser.
 
 
 ## Packages:
