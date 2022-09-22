@@ -1,13 +1,18 @@
 # Squeak
 This is the front-end part of the squeak app. The database and server can be found at: https://github.com/elovisae/Squeak_backend
 
-Squeak is s social media platform where you can publish messages for everyone to read. Think twitter - but SQUEAKIER.
+Squeak is a social media platform where you can publish messages for everyone to read. Think twitter - but SQUEAKIER.
 
 ## Table of content
 * [TTHFW](#TFFHW)
 * [Technologies](#Technologies:)
+* [Packages](#Packages) 
 * [Authentification flow](#Authentification flow)
 ## TTFHW
+
+```bash
+cd ws
+```
 
 
 ## Packages:
@@ -23,6 +28,7 @@ Squeak is s social media platform where you can publish messages for everyone to
 - Jest
 - Husky
 - Nodemon
+- Cypress
 
 
 ## Authentification flow
