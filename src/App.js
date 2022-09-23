@@ -8,6 +8,7 @@ import Account from "./pages/account/account";
 import Login from "./components/loginTest";
 import { useContext } from "react";
 import { Context } from "./context/context";
+import Home from "./pages/home/Home";
 
 function App() {
   const user = true;
@@ -15,7 +16,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={ <Home/>}/>
         <Route path="/account" element={user ? <Account /> : <Register />} />
         <Route path="/logintest" element={user ? <Feed /> : <Login />} />
         <Route path="/feed" element={user ? <Feed /> : <Register />} />
