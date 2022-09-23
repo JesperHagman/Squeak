@@ -56,6 +56,7 @@ describe('Formvalidator', () => {
     cy.get('[data-testid="email"]').type('testarn@test.com')
     cy.get('[data-testid="password"]').type('test')
     cy.get('form').submit()
+    cy.get('[data-testid="errorMessage"]').should('be.empty')
   })
 
 

@@ -87,7 +87,7 @@ const RegisterComponent = () => {
                     onChange={e =>setDetails({...details, username: e.target.value})} value={details.username}/>
                 </div>
 
-                <input type="submit" value="REGISTER"/>
+                <input type="submit" value="REGISTER" data-testid='submit'/>
             </div>
         </form>
     </div>

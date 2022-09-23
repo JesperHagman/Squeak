@@ -11,8 +11,8 @@ import { Context } from "./context/context";
 import Home from "./pages/home/Home";
 
 function App() {
-  //const user = false;
-  const { user } = useContext(Context);
+  const user = true;
+  //const { user } = useContext(Context);
   return (
     <Router>
       <Routes>

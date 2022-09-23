@@ -1,7 +1,8 @@
 import RegisterComponent from '../src/components/RegisterComponent'
 import { mount } from 'cypress/react'
 
-Cypress.Commands.add('mount', mount)
+
+ Cypress.Commands.add('mount', mount)
 
 describe('Form validation', () => {
     
@@ -94,11 +95,5 @@ describe('Form validation', () => {
         cy.get('form').submit()
         cy.get('[data-testid="errorMessage"]').should('be.empty')
     })
-
-
-
-
-
-
 
 })

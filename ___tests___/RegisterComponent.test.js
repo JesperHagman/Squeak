@@ -7,6 +7,7 @@ import '@testing-library/jest-dom'
 
 
 
+
 describe("Password field is available", () => {
     test('should contain an input field for password', () => {
       render(<RegisterComponent/>)
@@ -53,20 +54,73 @@ describe("Username field is available", () => {
 })
 
 
-/* describe('Email is correct', () => {
-  test('Email input should accept text', () => {
+describe('Registerform is correct', () => {
+  test('name input should not be empty', () => {
     render(<RegisterComponent/>)
-    const form = screen.getByTestId('registerform')
+    const nameInputNode = screen.getByTestId('name')
+    const errorMessage = screen.getByTestId('errorMessage')
+    const submitButton = screen.getByTestId('submit')
+
+    fireEvent.change(nameInputNode, { target: { value: '' } })
+    fireEvent.click(submitButton)
+    expect(errorMessage).toHaveTextContent('Please provide your name')
+  })  
+
+  test('phone input should not be empty', () => {
+    render(<RegisterComponent/>)
+    const nameInputNode = screen.getByTestId('name')
+    const errorMessage = screen.getByTestId('errorMessage')
+    const submitButton = screen.getByTestId('submit')
+
+    fireEvent.change(nameInputNode, { target: { value: 'Jesper' } })
+    fireEvent.click(submitButton)
+    expect(errorMessage).toHaveTextContent('Please provide your phonenumber')
+  })
+
+  test('email input should not be empty and inlcude a @ and .', () => {
+    render(<RegisterComponent/>)
+    const nameInputNode = screen.getByTestId('name')
+    const phoneInputNode = screen.getByTestId('phone')
+    const errorMessage = screen.getByTestId('errorMessage')
+    const submitButton = screen.getByTestId('submit')
+
+    fireEvent.change(nameInputNode, { target: { value: 'Jesper' } })
+    fireEvent.change(phoneInputNode, { target: { value: '123456' } })
+    fireEvent.click(submitButton)
+    expect(errorMessage).toHaveTextContent('Please provide a valid email adress')
+  })
+
+  test('password input should not be empty', () => {
+    render(<RegisterComponent/>)
+    const nameInputNode = screen.getByTestId('name')
+    const phoneInputNode = screen.getByTestId('phone')
     const emailInputNode = screen.getByTestId('email')
     const errorMessage = screen.getByTestId('errorMessage')
-    
+    const submitButton = screen.getByTestId('submit')
 
-    fireEvent.change(emailInputNode, { target: { value: 'super', input: 'super' } })
-    fireEvent.submit(form)
-    expect(() => {errorMessage}).toThrow('Please provide a valid email adress');
-    console.log(errorMessage.value)
-    console.log(emailInputNode.value)
-    console.log(emailInputNode.input)
-    expect(errorMessage.input).toBe('Please provide a valid email adress')
-  })  
-}) */
+    fireEvent.change(nameInputNode, { target: { value: 'Jesper' } })
+    fireEvent.change(phoneInputNode, { target: { value: '123456' } })
+    fireEvent.change(emailInputNode, { target: { value: 'hej@.com' } })
+    fireEvent.click(submitButton)
+    expect(errorMessage).toHaveTextContent('Please provide a password')
+  })
+
+  test('username input should not be empty', () => {
+    render(<RegisterComponent/>)
+    const nameInputNode = screen.getByTestId('name')
+    const phoneInputNode = screen.getByTestId('phone')
+    const emailInputNode = screen.getByTestId('email')
+    const passwordInputNode = screen.getByTestId('password')
+    const errorMessage = screen.getByTestId('errorMessage')
+    const submitButton = screen.getByTestId('submit')
+
+    fireEvent.change(nameInputNode, { target: { value: 'Jesper' } })
+    fireEvent.change(phoneInputNode, { target: { value: '123456' } })
+    fireEvent.change(emailInputNode, { target: { value: 'hej@.com' } })
+    fireEvent.change(passwordInputNode, { target: { value: 'hej123' } })
+    fireEvent.click(submitButton)
+    expect(errorMessage).toHaveTextContent('Please provide a username')
+  })
+})
+
+
