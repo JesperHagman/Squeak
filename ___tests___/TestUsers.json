@@ -1,0 +1,28 @@
+[
+    {
+        "name": "jesper",
+        "username": "Jeppe123",
+        "email": "test@test.com",
+        "password": "test123",
+        "phone": "012-345 67 89",
+        "id": "1" 
+    },
+    {        
+        "name": "",
+        "username": "Jeppe123",
+        "email": "test@test.com",
+        "password": "test123",
+        "phone": "012-345 67 89",
+        "id": "2"   
+    },
+    {
+        "name": "jesper",
+        "username": "",
+        "email": "test@test.com",
+        "password": "test123",
+        "phone": "012-345 67 89",
+        "id": "3"
+    }
+
+]
+  
