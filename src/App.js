@@ -10,8 +10,8 @@ import { useContext } from "react";
 import { Context } from "./context/context";
 
 function App() {
-  const user = true;
-  //const { user } = useContext(Context);
+  //const user = true;
+  const { user } = useContext(Context);
   return (
     <Router>
       <Routes>

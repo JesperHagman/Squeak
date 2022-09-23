@@ -12,6 +12,7 @@ import { useContext } from "react";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
+  const [desc, setDesc] = useState("");
   const { user, dispatch } = useContext(Context);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -26,6 +27,18 @@ function Feed() {
     dispatch({ type: "LOGOUT" });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newSqueak = {
+      username: user.user.username,
+      desc,
+    };
+
+    try {
+      await axios.post("http://localhost:5001/api/posts/", newSqueak);
+      window.location.reload();
+    } catch (err) {}
+  };
   return (
     <>
       <Header />
@@ -76,15 +89,17 @@ function Feed() {
         </div>
         <div className="feed">
           <div className="feedContainer">
-            <div className="input-container">
+            <form className="input-container" onSubmit={handleSubmit}>
               <textarea
                 className="squeak-text"
                 type="text"
                 placeholder="What's on your mind?"
+                onChange={(e) => setDesc(e.target.value)}
               />
-
-              <button className="submit-squeak">Squeak</button>
-            </div>
+              <button className="submit-squeak" type="submit">
+                Squeak
+              </button>
+            </form>
             <div className="squeak-container">
               <div className="post-container">
                 {posts.map((p) => (
