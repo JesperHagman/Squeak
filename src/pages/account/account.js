@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import axios from "axios";
 
+
 export default function Account() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

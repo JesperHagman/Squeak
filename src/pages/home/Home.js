@@ -1,31 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import LoginComponent from '../../components/LoginComponent'
 import './home.css'
 
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <>
-      <main className='home-container'>
-        <article> 
-          <img id="squeak-logo" src="/img/squeak-inverted.png" alt="Squeak logo" />
+    <div className='home-container'>
+      <aside className='flex user-container'>
+        <section>
+          <LoginComponent />
+        </section>
+        <section>
+          <p className='on-hover' onClick={() => navigate('/register')}>Not a user? Register now</p>
+        </section>
+      </aside>
+      <main>
+          <img id="squeak-logo" src="/img/squeak-inverted2.png" alt="Squeak logo" />
           <h1>SQUEAK</h1>
           <h2>Join and start squeaking! </h2>
-          <div className='flex user-container'>
-            <section>
-              <p className='on-hover' onClick={() => navigate('/register')}>Register now</p>
-            </section>
-            <section>
-              <p className='on-hover' onClick={() => navigate('/login')}>Log in</p>
-            </section>
-          
-          </div>
-          
-        </article>
-       
       </main>
-    </>
+    </div>
   )
 }
 
