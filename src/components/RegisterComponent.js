@@ -25,9 +25,7 @@ const RegisterComponent = () => {
       return message;
     }
     if (details.phone === "") {
-      console.log(message + " innan phone")
       setMessage("Please provide your phonenumber");
-      console.log(message + " efter phone")
       return message;
     }
     if (
@@ -58,8 +56,7 @@ const RegisterComponent = () => {
         })
     } 
     catch(err) {
-        console.log(message)
-        console.log(err)
+       
       }
   };
 
