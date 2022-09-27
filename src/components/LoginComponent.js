@@ -47,37 +47,41 @@ const LoginComponent = () => {
 
   return (
     <div data-testid="loginform">
-      <h2>Logga in</h2>
       <form onSubmit={handleLogin}>
         <div className="errorMessage" data-testid="errorMessage">
           {error}
         </div>
         <div>
-          <label htmlFor="email" />
-          <input
-            type="text"
-            id="email"
-            data-testid="email"
-            name="email"
-            placeholder="E-mail"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-
-          <label htmlFor="password">
+          <div className="login-form-group">
             <input
+              className="login-input"
+              type="text"
+              id="email"
+              data-testid="email"
+              name="email"
+              onChange={(e) => setDetails({ ...details, email: e.target.value })}
+              value={details.email}
+            />
+            <label className="login-input-label" htmlFor="email">Email</label>
+            
+          </div>
+          <div className="login-form-group">
+            <input
+              className="login-input"
               type="password"
               data-testid="password"
               id="password"
               name="password"
-              placeholder="Password"
               onChange={(e) =>
                 setDetails({ ...details, password: e.target.value })
               }
               value={details.password}></input>
-          </label>
+              <label className="login-input-label" htmlFor="password">Password</label>
+
+          </div>
+
         </div>
-        <input type="submit" value="Logga in" data-testid="submit"></input>
+        <button id="login-btn" type="submit" value="Logga in" data-testid="submit">Login</button>
       </form>
     </div>
   );
