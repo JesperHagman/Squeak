@@ -108,7 +108,7 @@ export default function Account() {
                   {" "}
                   <p>Profile Picture</p>
                 </label>
-                <img src={profilePic[0].img} alt="" />{" "}
+                <img className="profile-pic" src={profilePic[0].img} alt="" />{" "}
                 <button className="picture-btn">Change Profile picture</button>
               </span>
               <span>
