@@ -3,7 +3,6 @@ import RegisterComponent from "../src/components/RegisterComponent";
 import { render } from "@testing-library/react";
 import { screen, fireEvent } from "@testing-library/dom";
 import "@testing-library/jest-dom";
-var testUsers = require("./TestUsers.json");
 const renderSetup = () => render(<RegisterComponent />);
 
 describe("Password field is available", () => {
