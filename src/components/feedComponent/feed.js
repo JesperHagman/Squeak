@@ -113,7 +113,10 @@ function Feed() {
         <div className="right-sidebar">
           <div className="profile-upper">
             {" "}
-            <img src={imgFolder + user.user.profilePic} />
+            <img
+              src={imgFolder + user.user.profilePic}
+              className="profilePic"
+            />
             <h4>lovisa</h4>
           </div>
         </div>
