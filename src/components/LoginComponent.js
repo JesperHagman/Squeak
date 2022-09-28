@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-const fetchURL = "http://localhost:5001/api/auth/login";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../context/context";
+import { redirect } from "react-router-dom";
+
+
+const fetchURL = "https://squeak-backend.herokuapp.com/api/auth/login";
 
 const LoginComponent = () => {
   const [error, setError] = useState("");
@@ -7,10 +12,12 @@ const LoginComponent = () => {
     email: "",
     password: "",
   });
+  
+  const { dispatch } = useContext(Context)
 
   const handleLogin = (e) => {
+    dispatch({ type: "LOGIN_START" });
     e.preventDefault();
-    debugger;
     if (
       details.email === "" ||
       !details.email.includes("@") ||
@@ -34,12 +41,12 @@ const LoginComponent = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.loggedIn) {
-            console.log("Logged in!");
+            dispatch({ type: "LOGIN_SUCCESS", payload: data });
+            redirect("/feed")
           } else {
             setError(data.message);
-            console.log(data.message);
+            dispatch({ type: "LOGIN_FAILURE" });
           }
         });
     }
@@ -47,37 +54,41 @@ const LoginComponent = () => {
 
   return (
     <div data-testid="loginform">
-      <h2>Logga in</h2>
       <form onSubmit={handleLogin}>
         <div className="errorMessage" data-testid="errorMessage">
           {error}
         </div>
         <div>
-          <label htmlFor="email" />
-          <input
-            type="text"
-            id="email"
-            data-testid="email"
-            name="email"
-            placeholder="E-mail"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-
-          <label htmlFor="password">
+          <div className="login-form-group">
             <input
+              className="login-input"
+              type="text"
+              id="email"
+              data-testid="email"
+              name="email"
+              onChange={(e) => setDetails({ ...details, email: e.target.value })}
+              value={details.email}
+            />
+            <label className="login-input-label" htmlFor="email">Email</label>
+            
+          </div>
+          <div className="login-form-group">
+            <input
+              className="login-input"
               type="password"
               data-testid="password"
               id="password"
               name="password"
-              placeholder="Password"
               onChange={(e) =>
                 setDetails({ ...details, password: e.target.value })
               }
               value={details.password}></input>
-          </label>
+              <label className="login-input-label" htmlFor="password">Password</label>
+
+          </div>
+
         </div>
-        <input type="submit" value="Logga in" data-testid="submit"></input>
+        <button id="login-btn" type="submit" value="Logga in" data-testid="submit">Login</button>
       </form>
     </div>
   );

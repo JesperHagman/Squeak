@@ -17,10 +17,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={ <Home/>}/>
-        <Route path="/account" element={user ? <Account /> : <Register />} />
+        <Route path="/account" element={user ? <Account /> : <Home />} />
         <Route path="/logintest" element={user ? <Feed /> : <Login />} />
-        <Route path="/feed" element={user ? <Feed /> : <Register />} />
-        <Route path="/login" element={user ? <Feed /> : <LoginComponent />} />
+        <Route path="/feed" element={user ? <Feed /> : <Home />} />
+        <Route path="/login" element={user ? <Feed /> : <Home />} />
         <Route path="/register" element={user ? <Feed /> : <Register />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
