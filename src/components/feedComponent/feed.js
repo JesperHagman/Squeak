@@ -14,6 +14,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
   const [desc, setDesc] = useState("");
   const { user, dispatch } = useContext(Context);
+  const imgFolder = "http://localhost:5001/images/";
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("http://localhost:5001/api/posts");
@@ -112,7 +113,7 @@ function Feed() {
         <div className="right-sidebar">
           <div className="profile-upper">
             {" "}
-            <img src={profilePic[0].img} />
+            <img src={imgFolder + user.user.profilePic} />
             <h4>lovisa</h4>
           </div>
         </div>

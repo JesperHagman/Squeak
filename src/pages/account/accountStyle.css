@@ -47,7 +47,6 @@
   margin-bottom: 10px;
 }
 .settings-container label {
-  width: 200px;
 }
 
 input:focus {
@@ -66,6 +65,7 @@ input:focus {
 }
 .picture-btn {
   font-size: 15px;
+  margin-left: 150px;
 }
 .picture-btn2 {
   font-size: 15px;
@@ -75,4 +75,20 @@ input:focus {
 }
 #profilePic-span {
   margin-bottom: 0;
+}
+.iconImg {
+  width: 100px;
+}
+.fa-solid,
+.fas {
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(18, 18, 18);
+}
+
+i:hover {
+  color: rgb(130, 130, 130);
+}
+label {
+  width: 200px;
 }
