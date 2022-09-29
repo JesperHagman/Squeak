@@ -1,0 +1,12 @@
+.error-container {
+  display: flex;
+  padding: 50px 100px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.error-container img {
+  width: 200px;
+}
+.error-container img:hover {
+  cursor: pointer;
+}

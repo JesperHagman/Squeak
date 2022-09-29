@@ -2,22 +2,47 @@ import React from "react";
 import Header from "../../components/headerComponent/header";
 import "./accountStyle.css";
 import { Link } from "react-router-dom";
-import { profilePic } from "../../data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { Context } from "../../context/context";
 import { useContext } from "react";
 import { useState } from "react";
 import axios from "axios";
-
 
 export default function Account() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [file, setFile] = useState(null);
+  const imgFolder = "http://localhost:5001/images/";
 
   const { dispatch, user } = useContext(Context);
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+  };
+
+  const handleFile = async (e) => {
+    e.preventDefault();
+    const updatedFile = {
+      userId: user.user._id,
+    };
+    const data = new FormData();
+    const filename = Date.now() + file.name;
+    data.append("name", filename);
+    data.append("file", file);
+    updatedFile.profilePic = filename;
+
+    try {
+      await axios.post("http://localhost:5001/api/upload", data);
+    } catch (err) {}
+
+    try {
+      await axios.put(
+        "http://localhost:5001/api/users/" + user.user._id,
+        updatedFile
+      );
+    } catch (err) {}
   };
 
   const handleUserInfo = async (e) => {
@@ -35,6 +60,7 @@ export default function Account() {
         updatedInfo
       );
     } catch (err) {}
+    window.location.reload();
   };
 
   const handlePassword = async (e) => {
@@ -49,6 +75,7 @@ export default function Account() {
         "http://localhost:5001/api/users/" + user.user._id,
         updatedPassword
       );
+      console.log("good");
     } catch (err) {}
   };
 
@@ -101,16 +128,36 @@ export default function Account() {
         </div>
         <div className="main-container">
           <div className="settings-container">
-            <form onSubmit={handleUserInfo}>
+            <form onSubmit={handleFile}>
               <span id="profilePic-span">
                 {" "}
                 <label>
                   {" "}
                   <p>Profile Picture</p>
                 </label>
-                <img className="profile-pic" src={profilePic[0].img} alt="" />{" "}
-                <button className="picture-btn">Change Profile picture</button>
+                <label htmlFor="fileInput" className="iconImg">
+                  <i class="fa-solid fa-images"></i>
+                </label>
+                <img
+                  src={
+                    file
+                      ? URL.createObjectURL(file)
+                      : imgFolder + user.user.profilePic
+                  }
+                  alt=""
+                />{" "}
+                <input
+                  type="file"
+                  id="fileInput"
+                  style={{ display: "none" }}
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+                <button className="picture-btn" type="submit">
+                  Update Profile picture
+                </button>
               </span>
+            </form>
+            <form onSubmit={handleUserInfo}>
               <span>
                 <label>
                   <p>Full Name</p>{" "}
@@ -125,6 +172,7 @@ export default function Account() {
                 <label>
                   <p>Email</p>{" "}
                 </label>
+
                 <input
                   type="email"
                   placeholder={user.user.email}
