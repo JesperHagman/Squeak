@@ -16,9 +16,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={ <Home/>}/>
+        <Route path="/" element={user ? <Feed /> : <Home />} />
         <Route path="/account" element={user ? <Account /> : <Home />} />
-        <Route path="/logintest" element={user ? <Feed /> : <Login />} />
+        <Route path="/logintest" element={user ? <Feed /> : <Home />} />
         <Route path="/feed" element={user ? <Feed /> : <Home />} />
         <Route path="/login" element={user ? <Feed /> : <Home />} />
         <Route path="/register" element={user ? <Feed /> : <Register />} />
