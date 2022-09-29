@@ -19,7 +19,8 @@ body {
   margin: 0;
 }
 .right-sidebar img {
-  margin-bottom: 10px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .profile-upper {
