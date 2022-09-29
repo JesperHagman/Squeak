@@ -52,9 +52,9 @@ const LoginComponent = () => {
           {error}
         </div>
         <div>
-          <div className="login-form-group">
+          <div className="form-group">
             <input
-              className="login-input"
+              className="form-input"
               type="text"
               id="email"
               data-testid="email"
@@ -62,12 +62,12 @@ const LoginComponent = () => {
               onChange={(e) => setDetails({ ...details, email: e.target.value })}
               value={details.email}
             />
-            <label className="login-input-label" htmlFor="email">Email</label>
+            <label className="form-label" htmlFor="email">Email</label>
             
           </div>
-          <div className="login-form-group">
+          <div className="form-group">
             <input
-              className="login-input"
+              className="form-input"
               type="password"
               data-testid="password"
               id="password"
@@ -76,12 +76,12 @@ const LoginComponent = () => {
                 setDetails({ ...details, password: e.target.value })
               }
               value={details.password}></input>
-              <label className="login-input-label" htmlFor="password">Password</label>
+              <label className="form-label" htmlFor="password">Password</label>
 
           </div>
 
         </div>
-        <button id="login-btn" type="submit" value="Logga in" data-testid="submit">Login</button>
+        <button className="form-btn" type="submit" value="Logga in" data-testid="submit">Login</button>
       </form>
     </div>
   );

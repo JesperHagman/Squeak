@@ -6,7 +6,7 @@ import './home.css'
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <div className='home-container'>
+    <div className='home-container main-container'>
       <aside className='flex user-container'>
         <section>
           <LoginComponent />
