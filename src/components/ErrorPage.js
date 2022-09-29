@@ -5,7 +5,7 @@ export default function ErrorPage() {
   return (
     <div>
       <h3>Errorcode: 404... page not found</h3>
-      <p onClick={() => navigate(-1)}>Go back</p>
+      <p onClick={() => navigate('/')}>Go back</p>
     </div>
   );
 }

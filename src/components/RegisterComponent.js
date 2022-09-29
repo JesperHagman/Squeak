@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../context/context";
 
 const RegisterComponent = () => {
+  const { dispatch} = useContext(Context);
   const [details, setDetails] = useState({
     name: "",
     email: "",
@@ -28,8 +30,7 @@ const RegisterComponent = () => {
       setMessage("Please provide your phonenumber");
       return message;
     }
-    if (
-      details.email === "" || !details.email.includes("@") || !details.email.includes(".")) {
+    if (details.email === "" || !details.email.includes("@") || !details.email.includes(".")) { 
       setMessage("Please provide a valid email adress");
       return message;
     }
@@ -41,8 +42,9 @@ const RegisterComponent = () => {
       setMessage("Please provide a username");
       return message;
     }
+    dispatch({ type: "LOGIN_START" });
     try {
-     await fetch("http://localhost:5001/api/auth/register", {
+      await fetch("http://localhost:5001/api/auth/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -52,12 +54,12 @@ const RegisterComponent = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
-        })
-    } 
-    catch(err) {
-       
-      }
+          console.log(data);
+          dispatch({ type: "LOGIN_SUCCESS", payload: data });
+        });
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE" });
+    }
   };
 
   return (
