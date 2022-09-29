@@ -159,7 +159,7 @@ const RegisterComponent = () => {
           </div>
 
           <button
-            className="form-btn"
+            className="orange-btn"
             type="submit"
             value="REGISTER"
             data-testid="submit"

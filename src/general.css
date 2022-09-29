@@ -58,13 +58,13 @@
   direction: ltr;
 }
 
-.form-btn {
+.orange-btn {
   background: rgb(19, 19, 19);
   color: white;
   border-color: white;
   margin: 40px 0;
 }
-.form-btn:hover {
+.orange-btn:hover {
   border-color: #e35f19;
   color: #e35f19;
 }
