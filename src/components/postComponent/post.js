@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./postStyle.css";
 
 function Post({ post, editable }) {
@@ -21,7 +22,9 @@ function Post({ post, editable }) {
             Delete
           </button>
         ) : (
-          <h4>{post.username}</h4>
+          <a href="/ ">
+            <h4 className="post-username">{post.username}</h4>
+          </a>
         )}
       </div>
     </div>
