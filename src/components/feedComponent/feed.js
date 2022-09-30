@@ -117,7 +117,7 @@ function Feed() {
               src={imgFolder + user.user.profilePic}
               className="profilePic"
             />
-            <h4>lovisa</h4>
+            <h4>{user.user.username}</h4>
           </div>
         </div>
       </div>
