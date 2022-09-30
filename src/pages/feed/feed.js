@@ -1,14 +1,15 @@
 import React from "react";
 import { profilePic } from "../../data";
 import "./feedStyle.css";
-import Post from "../postComponent/post";
+import Post from "../../components/postComponent/post";
 import { useState } from "react";
-import Header from "../headerComponent/header";
+import Header from "../../components/headerComponent/header";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
 import { useContext } from "react";
+import { Hamburger } from "../../components/hamburger/hamburger";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -44,50 +45,7 @@ function Feed() {
     <>
       <Header />
       <div id="container">
-        <div className="left-sidebar">
-          {" "}
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-
-              <span></span>
-              <span></span>
-              <span></span>
-
-              <ul id="menu">
-                <Link to={"/login"}>
-                  <li>
-                    <p>START</p>
-                  </li>
-                </Link>
-                <a href="">
-                  <li>
-                    {" "}
-                    <p>PROFILE</p>
-                  </li>
-                </a>
-                <a href="">
-                  <li>
-                    {" "}
-                    <p>MY SQUEAKS</p>
-                  </li>
-                </a>
-                <a href="/account">
-                  <li>
-                    {" "}
-                    <p>ACCOUNT SETTINGS</p>
-                  </li>
-                </a>
-                <a href="">
-                  <li onClick={handleLogout}>
-                    {" "}
-                    <p>LOGOUT</p>
-                  </li>
-                </a>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <Hamburger />
         <div className="feed">
           <div className="feedContainer">
             <form className="input-container" onSubmit={handleSubmit}>

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../context/context";
 import { redirect } from "react-router-dom";
 
-
 const fetchURL = "https://squeak-backend.herokuapp.com/api/auth/login";
 
 const LoginComponent = () => {
@@ -12,8 +11,8 @@ const LoginComponent = () => {
     email: "",
     password: "",
   });
-  
-  const { dispatch } = useContext(Context)
+
+  const { dispatch } = useContext(Context);
 
   const handleLogin = (e) => {
     dispatch({ type: "LOGIN_START" });
@@ -43,7 +42,7 @@ const LoginComponent = () => {
         .then((data) => {
           if (data.loggedIn) {
             dispatch({ type: "LOGIN_SUCCESS", payload: data });
-            redirect("/feed")
+            redirect("/feed");
           } else {
             setError(data.message);
             dispatch({ type: "LOGIN_FAILURE" });
@@ -59,22 +58,25 @@ const LoginComponent = () => {
           {error}
         </div>
         <div>
-          <div className="login-form-group">
+          <div className="form-group">
             <input
-              className="login-input"
+              className="form-input"
               type="text"
               id="email"
               data-testid="email"
               name="email"
-              onChange={(e) => setDetails({ ...details, email: e.target.value })}
+              onChange={(e) =>
+                setDetails({ ...details, email: e.target.value })
+              }
               value={details.email}
             />
-            <label className="login-input-label" htmlFor="email">Email</label>
-            
+            <label className="form-label" htmlFor="email">
+              Email
+            </label>
           </div>
-          <div className="login-form-group">
+          <div className="form-group">
             <input
-              className="login-input"
+              className="form-input"
               type="password"
               data-testid="password"
               id="password"
@@ -82,13 +84,21 @@ const LoginComponent = () => {
               onChange={(e) =>
                 setDetails({ ...details, password: e.target.value })
               }
-              value={details.password}></input>
-              <label className="login-input-label" htmlFor="password">Password</label>
-
+              value={details.password}
+            ></input>
+            <label className="form-label" htmlFor="password">
+              Password
+            </label>
           </div>
-
         </div>
-        <button id="login-btn" type="submit" value="Logga in" data-testid="submit">Login</button>
+        <button
+          className="orange-btn"
+          type="submit"
+          value="Logga in"
+          data-testid="submit"
+        >
+          Login
+        </button>
       </form>
     </div>
   );

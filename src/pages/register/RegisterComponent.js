@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../../context/context";
+import "./register.css";
 
 const RegisterComponent = () => {
+  const { dispatch} = useContext(Context);
   const [details, setDetails] = useState({
     name: "",
     email: "",
@@ -28,8 +31,8 @@ const RegisterComponent = () => {
       setMessage("Please provide your phonenumber");
       return message;
     }
-    if (
-      details.email === "" || !details.email.includes("@") || !details.email.includes(".")) {
+    if (details.email === "" || !details.email.includes("@") || !details.email.includes(".")) { 
+
       setMessage("Please provide a valid email adress");
       return message;
     }
@@ -41,8 +44,9 @@ const RegisterComponent = () => {
       setMessage("Please provide a username");
       return message;
     }
+    dispatch({ type: "LOGIN_START" });
     try {
-     await fetch("http://localhost:5001/api/auth/register", {
+      await fetch("http://localhost:5001/api/auth/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -52,27 +56,31 @@ const RegisterComponent = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
-        })
-    } 
-    catch(err) {
-       
-      }
+          console.log(data);
+          dispatch({ type: "LOGIN_SUCCESS", payload: data });
+        });
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE" });
+    }
   };
 
   return (
-    <div data-testid="registerform">
+    <div
+      className="body-container"
+      id="register-container"
+      data-testid="registerform"
+    >
       <form onSubmit={registerHandler}>
-        <h2>Registrera</h2>
+        <h1>Register here</h1>
 
         <div className="Message" data-testid="errorMessage">
           {message}
         </div>
 
         <div>
-          <div>
-            <label htmlFor="name">Name:</label>
+          <div className="form-group">
             <input
+              className="form-input"
               type="text"
               name="name"
               id="name"
@@ -80,11 +88,14 @@ const RegisterComponent = () => {
               onChange={(e) => setDetails({ ...details, name: e.target.value })}
               value={details.name}
             />
+            <label className="form-label" htmlFor="name">
+              Name:
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="phone">Phone:</label>
+          <div className="form-group">
             <input
+              className="form-input"
               type="text"
               phone="phone"
               id="phone"
@@ -94,26 +105,31 @@ const RegisterComponent = () => {
               }
               value={details.phone}
             />
+            <label className="form-label" htmlFor="phone">
+              Phone:
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="email">Email:</label>
+          <div className="form-group">
             <input
+              className="form-input"
               type="text"
               id="email"
               data-testid="email"
               name="email"
-              placeholder="E-mail"
               onChange={(e) =>
                 setDetails({ ...details, email: e.target.value })
               }
               value={details.email}
             />
+            <label className="form-label" htmlFor="email">
+              Email:
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="password">Password:</label>
+          <div className="form-group">
             <input
+              className="form-input"
               type="password"
               password="password"
               id="password"
@@ -123,11 +139,14 @@ const RegisterComponent = () => {
               }
               value={details.password}
             />
+            <label className="form-label" htmlFor="password">
+              Password:
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="username">Username:</label>
+          <div className="form-group">
             <input
+              className="form-input"
               type="text"
               name="username"
               id="username"
@@ -137,9 +156,19 @@ const RegisterComponent = () => {
               }
               value={details.username}
             />
+            <label className="form-label" htmlFor="username">
+              Username:
+            </label>
           </div>
 
-          <input type="submit" value="REGISTER" data-testid="submit" />
+          <button
+            className="orange-btn"
+            type="submit"
+            value="REGISTER"
+            data-testid="submit"
+          >
+            Register
+          </button>
         </div>
       </form>
     </div>

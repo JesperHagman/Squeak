@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./components/RegisterComponent";
+import Register from "./pages/register/RegisterComponent";
 import LoginComponent from "./components/LoginComponent";
-import ErrorPage from "./components/ErrorPage";
-import Feed from "./components/feedComponent/feed";
+import ErrorPage from "./pages/404/ErrorPage";
+import Feed from "./pages/feed/feed";
 import Account from "./pages/account/account";
 import Login from "./components/loginTest";
 import { useContext } from "react";
@@ -16,12 +16,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={ <Home/>}/>
-        <Route path="/account" element={user ? <Account /> : <Home />} />
-        <Route path="/logintest" element={user ? <Feed /> : <Login />} />
-        <Route path="/feed" element={user ? <Feed /> : <Home />} />
+        <Route path="/" element={user ? <Feed /> : <Home />} />
         <Route path="/login" element={user ? <Feed /> : <Home />} />
         <Route path="/register" element={user ? <Feed /> : <Register />} />
+        <Route path="/feed" element={user ? <Feed /> : <Home />} />
+        <Route path="/account" element={user ? <Account /> : <Home />} />
+        <Route path="/logintest" element={user ? <Feed /> : <Home />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
