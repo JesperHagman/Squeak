@@ -51,3 +51,8 @@
   color: black;
   margin-top: 20px;
 }
+
+.post-username {
+  color: white;
+  text-decoration: none;
+}

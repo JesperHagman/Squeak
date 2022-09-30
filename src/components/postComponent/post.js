@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "./postStyle.css";
 
 function Post({ post }) {
@@ -13,7 +13,9 @@ function Post({ post }) {
         {" "}
         <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
         <p className="comment-style">Comment</p>
-        <h4>{post.username}</h4>
+        <a href='/ '>
+          <h4 className="post-username" >{post.username}</h4> 
+        </a>
       </div>
     </div>
   );
