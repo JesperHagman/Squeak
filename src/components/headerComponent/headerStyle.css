@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
 .container {
   height: 50px;
   width: 100%;
@@ -9,4 +10,9 @@
   position: fixed;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   z-index: 1;
+}
+
+.container h1 {
+  font-family: "Nova square", cursive;
+  font-size: 26px;
 }

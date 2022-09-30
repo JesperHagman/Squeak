@@ -5,8 +5,7 @@
   padding: 5px;
   color: rgba(255, 255, 255, 0.941);
   height: auto;
-  min-width: 45%;
-  max-width: 80%;
+  width: 80%;
   height: auto;
   contain: content;
   overflow: auto;

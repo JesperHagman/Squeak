@@ -1,0 +1,23 @@
+.mysqueaks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.mysqueaks-container > div {
+  border-top: 2px solid rgb(250, 250, 250);
+  width: 100%;
+}
+.mysqueaks-container .post {
+  width: 60%;
+}
+.edit-btn {
+  border-color: blue;
+  color: blue;
+  padding: 8px;
+}
+.delete-btn {
+  border-color: red;
+  color: rgb(90, 0, 0);
+  padding: 8px;
+}
