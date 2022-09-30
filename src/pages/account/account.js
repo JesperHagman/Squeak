@@ -8,6 +8,7 @@ import { Context } from "../../context/context";
 import { useContext } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Hamburger } from "../../components/hamburger/hamburger";
 
 export default function Account() {
   const [name, setName] = useState("");
@@ -83,49 +84,7 @@ export default function Account() {
     <>
       <Header />
       <div class="profile-container">
-        <div className="left-container">
-          <nav role="navigation">
-            <div id="menuToggle">
-              <input type="checkbox" />
-
-              <span></span>
-              <span></span>
-              <span></span>
-
-              <ul id="menu">
-                <Link to={"/feed"}>
-                  <li>
-                    <p>START</p>
-                  </li>
-                </Link>
-                <a href="">
-                  <li>
-                    {" "}
-                    <p>PROFILE</p>
-                  </li>
-                </a>
-                <a href="">
-                  <li>
-                    {" "}
-                    <p>MY SQUEAKS</p>
-                  </li>
-                </a>
-                <a href="/account">
-                  <li>
-                    {" "}
-                    <p>ACCOUNT SETTINGS</p>
-                  </li>
-                </a>
-                <a href="">
-                  <li onClick={handleLogout}>
-                    {" "}
-                    <p>LOGOUT</p>
-                  </li>
-                </a>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        <Hamburger />
         <div className="main-container">
           <div className="settings-container">
             <form onSubmit={handleFile}>
