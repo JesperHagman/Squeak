@@ -1,9 +1,6 @@
 import React from "react";
 import Header from "../../components/headerComponent/header";
 import "./accountStyle.css";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { Context } from "../../context/context";
 import { useContext } from "react";
 import { useState } from "react";
@@ -18,10 +15,7 @@ export default function Account() {
   const [file, setFile] = useState(null);
   const imgFolder = "http://localhost:5001/images/";
 
-  const { dispatch, user } = useContext(Context);
-  const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
-  };
+  const { user } = useContext(Context);
 
   const handleFile = async (e) => {
     e.preventDefault();
