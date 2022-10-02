@@ -4,12 +4,11 @@ import { Context } from "../../context/context";
 import { useContext } from "react";
 
 export const Hamburger = () => {
-    const { dispatch, user } = useContext(Context);
+  const { dispatch, user } = useContext(Context);
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
-  
 
   return (
     <div className="left-container">
@@ -33,7 +32,7 @@ export const Hamburger = () => {
                 <p>PROFILE</p>
               </li>
             </a>
-            <a href="">
+            <a href="/squeaks">
               <li>
                 {" "}
                 <p>MY SQUEAKS</p>

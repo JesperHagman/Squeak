@@ -1,13 +1,9 @@
 import React from "react";
 import Comment from "../comment/Comment";
+import { Link } from "react-router-dom";
 import "./postStyle.css";
 
-function Post({ post }) {
-
-  const toggleComment = () => {
-  
-  }
-
+function Post({ post, editable }) {
   return (
     <div className="post">
       <div className="post-top">
@@ -17,8 +13,21 @@ function Post({ post }) {
       <div className="post-bottom">
         {" "}
         <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
-        <button className="comment-style" onClick={toggleComment}>Comment</button>
-        <h4>{post.username}</h4>
+        <p className="comment-style">Comment</p>
+        {editable ? (
+          <button
+            // onClick={() => {
+            //   handleClick();
+            // }}
+            className="delete-btn"
+          >
+            Delete
+          </button>
+        ) : (
+          <a href="/ ">
+            <h4 className="post-username">{post.username}</h4>
+          </a>
+        )}
       </div>
         <div className="comment-toggle">
         <Comment/>
