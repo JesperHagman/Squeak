@@ -28,9 +28,9 @@
 }
 .comment-style {
   color: black;
-
   font-size: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
+  border: 0;
 }
 .post-bottom {
   height: 50%;

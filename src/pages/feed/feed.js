@@ -1,12 +1,10 @@
 import React from "react";
-import { profilePic } from "../../data";
 import "./feedStyle.css";
 import Post from "../../components/postComponent/post";
 import { useState } from "react";
 import Header from "../../components/headerComponent/header";
 import { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
 import { useContext } from "react";
 import { Hamburger } from "../../components/hamburger/hamburger";
@@ -14,8 +12,9 @@ import { Hamburger } from "../../components/hamburger/hamburger";
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [desc, setDesc] = useState("");
-  const { user, dispatch } = useContext(Context);
+  const { user } = useContext(Context);
   const imgFolder = "http://localhost:5001/images/";
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("http://localhost:5001/api/posts");
@@ -25,15 +24,11 @@ function Feed() {
     fetchPosts();
   }, []);
 
-  const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newSqueak = {
       username: user.user.username,
-      desc,
+      desc
     };
 
     try {

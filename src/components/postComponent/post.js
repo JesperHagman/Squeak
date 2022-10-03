@@ -1,4 +1,5 @@
 import React from "react";
+import Comment from "../comment/Comment";
 import { Link } from "react-router-dom";
 import "./postStyle.css";
 
@@ -6,6 +7,7 @@ function Post({ post, editable }) {
   return (
     <div className="post">
       <div className="post-top">
+        {" "}
         <p className="post-p">{post.desc}</p>
       </div>
       <div className="post-bottom">
@@ -27,6 +29,9 @@ function Post({ post, editable }) {
           </Link>
         )}
       </div>
+        <div className="comment-toggle">
+        <Comment/>
+        </div>
     </div>
   );
 }
