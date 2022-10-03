@@ -1,34 +1,43 @@
 import React, { useEffect, useState} from "react";
 import axios from "axios";
+import Header from "../../components/headerComponent/header";
+import Post from "../../components/postComponent/post";
+import { Hamburger } from "../../components/hamburger/hamburger";
 
 function UsersProfile(post) {
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   });
-  let user = params.username;
-
+  let username = params.username;
+  const fetchAdress = `https://squeak-backend.herokuapp.com/api/posts?user=${username}`;
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("http://localhost:5001/api/posts", user);
+      const res = await axios.get(fetchAdress);
       setPosts(res.data);
-      console.log(res.data);
     };
     fetchPosts();
   }, []);
 
-  console.log(user);
   return (
-    <div className="post">
-      <div className="post-top">
-        <p className="post-p">{posts.desc}</p>
+    <>
+    <Header />
+    <div className="profile-container">
+      <Hamburger></Hamburger>
+      <div className="main-container  mysqueaks-container">
+        <h2> {username}'s Squeak</h2>
+        <div className="squeak-container">
+          <div className="post-container">
+            {posts.map((post) => (
+              <Post post={post}/>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="post-bottom">
-        {" "}
-        <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
-      </div>
+      <div className="right-container"></div>
     </div>
+  </>
   );
 }
 
