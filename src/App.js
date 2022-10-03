@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { Context } from "./context/context";
 import Home from "./pages/home/Home";
 import Squeaks from "./pages/mySqueaks/mySqueaks";
+import UsersProfile from "./pages/usersProfile/UsersProfile";
 
 function App() {
   //const user = true;
@@ -24,6 +25,7 @@ function App() {
         <Route path="/account" element={user ? <Account /> : <Home />} />
         <Route path="/logintest" element={user ? <Feed /> : <Home />} />
         <Route path="/squeaks" element={user ? <Squeaks /> : <Home />} />
+        <Route path="/usersProfile" element={user ? <UsersProfile /> : <Home />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
