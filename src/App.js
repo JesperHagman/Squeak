@@ -1,11 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/register/RegisterComponent";
-import LoginComponent from "./components/LoginComponent";
 import ErrorPage from "./pages/404/ErrorPage";
 import Feed from "./pages/feed/feed";
 import Account from "./pages/account/account";
-import Login from "./components/loginTest";
 import { useContext } from "react";
 import { Context } from "./context/context";
 import Home from "./pages/home/Home";

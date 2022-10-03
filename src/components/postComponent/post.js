@@ -24,7 +24,7 @@ function Post({ post, editable }) {
             Delete
           </button>
         ) : (
-          <Link to= {`/UsersProfile?username=${post.username}`}>
+          <Link to= {`/usersprofile?username=${post.username}`}>
             <h4 className="post-username">{post.username}</h4>
           </Link>
         )}

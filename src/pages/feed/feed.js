@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./feedStyle.css";
 import Post from "../../components/postComponent/post";
-import { useState } from "react";
 import Header from "../../components/headerComponent/header";
-import { useEffect } from "react";
 import axios from "axios";
 import { Context } from "../../context/context";
-import { useContext } from "react";
 import { Hamburger } from "../../components/hamburger/hamburger";
 
 function Feed() {
