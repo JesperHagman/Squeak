@@ -1,6 +1,4 @@
 import React from "react";
-import Comment from "../comment/Comment";
-import { Link } from "react-router-dom";
 import "./postStyle.css";
 
 function Post({ post, editable }) {
@@ -13,7 +11,6 @@ function Post({ post, editable }) {
       <div className="post-bottom">
         {" "}
         <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
-        <p className="comment-style">Comment</p>
         {editable ? (
           <button
             // onClick={() => {
@@ -29,9 +26,6 @@ function Post({ post, editable }) {
           </a>
         )}
       </div>
-        <div className="comment-toggle">
-        <Comment/>
-        </div>
     </div>
   );
 }

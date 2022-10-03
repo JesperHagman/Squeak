@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { redirect } from "react-router-dom";
 import { Context } from "../../context/context";
 import "./register.css";
 
@@ -56,8 +57,8 @@ const RegisterComponent = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           dispatch({ type: "LOGIN_SUCCESS", payload: data });
+          redirect("/feed");
         });
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });

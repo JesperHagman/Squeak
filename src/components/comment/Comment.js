@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 
 const Comment = () => {
     const { user } = useContext(Context);
-    const [comment, setComment] = useState([])
     const [desc, setDesc] = useState("");
     
     const createComment = async (e) => {
