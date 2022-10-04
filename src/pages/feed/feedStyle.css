@@ -16,38 +16,33 @@ body {
   justify-content: center;
 }
 .right-sidebar h4 {
-  margin: 0;
+  margin: 10px;
 }
-.right-sidebar img {
+.profilePic {
   height: 100px;
+  width: 100px;
   border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid white;
 }
 
 .profile-upper {
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 60px;
+  padding-bottom: 150px;
 }
 .right-sidebar {
   flex: 1;
-
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  background-color: #282a35;
+  color: rgba(255, 255, 255, 0.941);
 }
-.profile-pic {
-  border: 1px solid white;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  object-fit: cover;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
+
 ul {
   margin-top: 50px;
   list-style: none;
@@ -63,6 +58,10 @@ ul {
   align-items: center;
   padding: 50px;
   width: 30%;
+}
+
+.leftFeedContainer {
+  width: 40%;
 }
 .feed {
   background-color: #ffffff;

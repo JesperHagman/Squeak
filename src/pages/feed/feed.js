@@ -1,21 +1,21 @@
-import React from "react";
-import { profilePic } from "../../data";
+import React, { useEffect, useState, useContext } from "react";
 import "./feedStyle.css";
 import Post from "../../components/postComponent/post";
-import { useState } from "react";
 import Header from "../../components/headerComponent/header";
-import { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
-import { useContext } from "react";
 import { Hamburger } from "../../components/hamburger/hamburger";
+import Explore from "../../components/explore/explore";
+import Profile from "../profile/profile";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [desc, setDesc] = useState("");
-  const { user, dispatch } = useContext(Context);
+  const { user } = useContext(Context);
+  const [profileUser, setProfileUser] = useState("");
+
   const imgFolder = "http://localhost:5001/images/";
+
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get("http://localhost:5001/api/posts");
@@ -24,10 +24,6 @@ function Feed() {
     };
     fetchPosts();
   }, []);
-
-  const handleLogout = () => {
-    dispatch({ type: "LOGOUT" });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,6 +55,7 @@ function Feed() {
                 Squeak
               </button>
             </form>
+
             <div className="squeak-container">
               <div className="post-container">
                 {posts.map((p) => (
@@ -74,11 +71,20 @@ function Feed() {
             <img
               src={imgFolder + user.user.profilePic}
               className="profilePic"
+              alt="hej"
             />
             <h4>{user.user.username}</h4>
           </div>
+          <h4>EXPLORE</h4>
+          <div className="explore">
+            <Explore
+              profileUser={profileUser}
+              setProfileUser={setProfileUser}
+            />
+          </div>
         </div>
       </div>
+      <Profile profileUser={profileUser} />
     </>
   );
 }

@@ -1,0 +1,22 @@
+.profileContainer {
+  padding: 10px;
+
+  height: 320px;
+  margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+.top-holder {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+.top-holder img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.lower-holder {
+  display: flex;
+  flex-direction: column;
+}

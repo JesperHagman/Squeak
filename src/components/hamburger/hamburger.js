@@ -26,7 +26,7 @@ export const Hamburger = () => {
                 <p>START</p>
               </li>
             </Link>
-            <a href="">
+            <a href="/account">
               <li>
                 {" "}
                 <p>PROFILE</p>
@@ -36,12 +36,6 @@ export const Hamburger = () => {
               <li>
                 {" "}
                 <p>MY SQUEAKS</p>
-              </li>
-            </a>
-            <a href="/account">
-              <li>
-                {" "}
-                <p>ACCOUNT SETTINGS</p>
               </li>
             </a>
             <a href="">

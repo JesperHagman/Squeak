@@ -1,0 +1,14 @@
+.profilePic1 {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+  object-fit: cover;
+  cursor: pointer;
+}
+.users {
+  display: flex;
+  flex-direction: column;
+  max-width: 40px;
+  min-width: 40px;
+}
