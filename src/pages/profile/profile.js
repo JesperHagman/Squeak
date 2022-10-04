@@ -16,7 +16,7 @@ const Profile = ({ profileUser }) => {
 
   useEffect(() => {
     fetchProfile();
-  });
+  }, []);
 
   return (
     <div className="profileContainer">
