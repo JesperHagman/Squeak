@@ -8,7 +8,6 @@ body {
   height: 100vh;
 }
 
-
 .right-sidebar h4 {
   margin: 10px;
 }
@@ -165,7 +164,7 @@ button:not(:disabled):active {
 .post-container {
   padding-top: 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 15px;
 }
@@ -176,36 +175,34 @@ button:not(:disabled):active {
   flex-direction: row;
   height: 100vh;
 }
-@media only screen and (max-width: 1230px){
-  .input-container{
+@media only screen and (max-width: 1230px) {
+  .input-container {
     width: 30%;
   }
-  .input-container button{
+  .input-container button {
     margin-left: 0;
   }
-  .squeak-text{
-    width:250px;
+  .squeak-text {
+    width: 250px;
     margin-left: 0;
   }
 }
-@media only screen and (max-width: 992px){
- 
- #container{
-  display: block;
-}
+@media only screen and (max-width: 992px) {
+  #container {
+    display: block;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .feed-container{
+  .feed-container {
     flex-direction: column;
     align-items: center;
     height: fit-content;
-  } 
-  .post-container{
-    padding-top: 20px;
-    width:100%;
   }
-  .squeak-container{
+  .post-container {
+    padding-top: 20px;
+    width: 100%;
+  }
+  .squeak-container {
     width: 100%;
   }
 }
-
