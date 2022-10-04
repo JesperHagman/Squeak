@@ -14,7 +14,7 @@ function Feed() {
   const { user } = useContext(Context);
   const [profileUser, setProfileUser] = useState("");
 
-  const imgFolder = "https://squeak-backend.herokuapp.com:5001/images/";
+  const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
   const fetchPosts = async () => {
     const res = await axios.get("https://squeak-backend.herokuapp.com/api/posts");
@@ -41,7 +41,7 @@ function Feed() {
       <div id="container">
         <Hamburger />
         <div className="feed">
-          <div className="feedContainer">
+          <div className="feed-container">
             <form className="input-container" onSubmit={handleSubmit}>
               <textarea
                 className="squeak-text"

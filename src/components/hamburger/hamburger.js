@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
 import { useContext } from "react";
+import './hamburger.css'
 
 export const Hamburger = () => {
   const { dispatch, user } = useContext(Context);

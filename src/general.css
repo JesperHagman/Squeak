@@ -1,3 +1,7 @@
+:root {
+  --body-text: 20px;
+}
+
 .body-container {
   width: 100%;
   min-height: calc(100vh);
@@ -18,8 +22,9 @@
 .form-group {
   width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content:space-between ;
   gap: 10px;
-  margin: 10px 0;
 }
 
 .form-input {
@@ -67,4 +72,24 @@
 .orange-btn:hover {
   border-color: #e35f19;
   color: #e35f19;
+}
+
+.p-hover {
+  font-size: var(--body-text);
+  padding: 10px;
+}
+
+.p-hover:hover {
+  transition: all ease-in-out 0.2s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+  .form-label{
+    width: fit-content;
+  }
+  .form-input{
+    max-width: 70%;
+  }
 }

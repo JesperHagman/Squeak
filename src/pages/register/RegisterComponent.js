@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { Context } from "../../context/context";
 import "./register.css";
 
@@ -13,6 +13,7 @@ const RegisterComponent = () => {
     username: "",
   });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate()
 
   const registerHandler = async (e) => {
     e.preventDefault();
@@ -72,6 +73,7 @@ const RegisterComponent = () => {
       data-testid="registerform"
     >
       <form onSubmit={registerHandler}>
+        <img className="small-logo" src="/img/squeak.png" alt="Squeak logo" onClick={() => navigate('/')} />
         <h1>Register here</h1>
 
         <div className="Message" data-testid="errorMessage">
@@ -171,7 +173,11 @@ const RegisterComponent = () => {
             Register
           </button>
         </div>
+        <p className="p-hover" onClick={() => navigate("/")}>
+            Already a user? Log in
+      </p>
       </form>
+      
     </div>
   );
 };

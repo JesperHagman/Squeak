@@ -95,3 +95,9 @@ i:hover {
 label {
   width: 200px;
 }
+
+@media only screen and (max-width: 992px) {
+  .left-container{
+    height:10vh;
+  }
+}

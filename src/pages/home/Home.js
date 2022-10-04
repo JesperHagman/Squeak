@@ -12,7 +12,7 @@ const Home = () => {
           <LoginComponent />
         </section>
         <section>
-          <p className="on-hover" onClick={() => navigate("/register")}>
+          <p className="p-hover" onClick={() => navigate("/register")}>
             Not a user? Register now
           </p>
         </section>

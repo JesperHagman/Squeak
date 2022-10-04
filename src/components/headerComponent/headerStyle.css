@@ -16,3 +16,6 @@
   font-family: "Nova square", cursive;
   font-size: 26px;
 }
+.container h1:hover{
+  cursor: pointer;
+}
