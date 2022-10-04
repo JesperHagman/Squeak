@@ -6,7 +6,6 @@ const UserCard = ({ user, profileUser, setProfileUser }) => {
   const changeState = (e) => {
     e.preventDefault();
     setProfileUser(user._id);
-    console.log(profileUser);
   };
   return (
     <>

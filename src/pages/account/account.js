@@ -13,7 +13,7 @@ export default function Account() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [file, setFile] = useState(null);
-  const imgFolder = "http://localhost:5001/images/";
+  const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
   const { user } = useContext(Context);
 
@@ -29,12 +29,12 @@ export default function Account() {
     updatedFile.profilePic = filename;
 
     try {
-      await axios.post("http://localhost:5001/api/upload", data);
+      await axios.post("https://squeak-backend.herokuapp.com/api/upload", data);
     } catch (err) {}
 
     try {
       await axios.put(
-        "http://localhost:5001/api/users/" + user.user._id,
+        "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedFile
       );
     } catch (err) {}
@@ -67,10 +67,9 @@ export default function Account() {
 
     try {
       await axios.put(
-        "http://localhost:5001/api/users/" + user.user._id,
+        "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedPassword
       );
-      console.log("good");
     } catch (err) {}
   };
 

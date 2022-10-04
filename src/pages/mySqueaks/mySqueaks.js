@@ -20,9 +20,7 @@ export default function Squeaks() {
     try {
       const res = await axios.get(fetchAdress);
       setSqueaks(res.data);
-      console.log(res.data);
     } catch (error) {
-      console.log(error);
     }
   };
   useEffect(() => {

@@ -19,7 +19,6 @@ function Feed() {
   const fetchPosts = async () => {
     const res = await axios.get("https://squeak-backend.herokuapp.com/api/posts");
     setPosts(res.data);
-    console.log(res);
   };
   useEffect(() => {
     fetchPosts();

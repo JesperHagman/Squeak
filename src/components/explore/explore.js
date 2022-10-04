@@ -10,7 +10,6 @@ const Explore = ({ profileUser, setProfileUser }) => {
   const fetchUsers = async () => {
     const res = await axios.get("https://squeak-backend.herokuapp.com/api/users");
     setUsers(res.data);
-    console.log(res);
   };
 
   useEffect(() => {
