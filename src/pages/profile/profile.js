@@ -2,17 +2,16 @@ import React from "react";
 import axios from "axios";
 import "./profile.css";
 import { useEffect, useState } from "react";
-const imgFolder = "http://localhost:5001/images/";
+const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
 const Profile = ({ profileUser }) => {
   const [profile, setProfile] = useState([]);
 
   const fetchProfile = async () => {
     const res = await axios.get(
-      "http://localhost:5001/api/users/" + profileUser
+      "https://squeak-backend.herokuapp.com/api/users/" + profileUser
     );
     setProfile(res.data);
-    console.log(profile);
   };
 
   useEffect(() => {

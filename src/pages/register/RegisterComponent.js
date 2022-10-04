@@ -47,7 +47,7 @@ const RegisterComponent = () => {
     }
     dispatch({ type: "LOGIN_START" });
     try {
-      await fetch("http://localhost:5001/api/auth/register", {
+      await fetch("https://squeak-backend.herokuapp.com/api/auth/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",

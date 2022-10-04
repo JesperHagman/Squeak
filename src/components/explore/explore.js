@@ -8,7 +8,7 @@ import "./explore.css";
 const Explore = ({ profileUser, setProfileUser }) => {
   const [users, setUsers] = useState([]);
   const fetchUsers = async () => {
-    const res = await axios.get("http://localhost:5001/api/users");
+    const res = await axios.get("https://squeak-backend.herokuapp.com/api/users");
     setUsers(res.data);
     console.log(res);
   };

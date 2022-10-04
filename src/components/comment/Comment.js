@@ -15,7 +15,7 @@ const Comment = () => {
         };
     
         try {
-          await axios.post("http://localhost:5002/api/comments/", commentSqueak);
+          await axios.post("https://squeak-backend.herokuapp.com/api/comments/", commentSqueak);
           window.location.reload();
         } catch (err) {}
       };

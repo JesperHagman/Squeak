@@ -51,7 +51,7 @@ export default function Account() {
 
     try {
       await axios.put(
-        "http://localhost:5001/api/users/" + user.user._id,
+        "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedInfo
       );
     } catch (err) {}

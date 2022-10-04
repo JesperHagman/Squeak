@@ -14,14 +14,14 @@ function Feed() {
   const { user } = useContext(Context);
   const [profileUser, setProfileUser] = useState("");
 
-  const imgFolder = "http://localhost:5001/images/";
+  const imgFolder = "https://squeak-backend.herokuapp.com:5001/images/";
 
+  const fetchPosts = async () => {
+    const res = await axios.get("https://squeak-backend.herokuapp.com/api/posts");
+    setPosts(res.data);
+    console.log(res);
+  };
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await axios.get("http://localhost:5001/api/posts");
-      setPosts(res.data);
-      console.log(res);
-    };
     fetchPosts();
   }, []);
 
@@ -33,7 +33,7 @@ function Feed() {
     };
 
     try {
-      await axios.post("http://localhost:5001/api/posts/", newSqueak);
+      await axios.post("https://squeak-backend.herokuapp.com/api/posts/", newSqueak);
       window.location.reload();
     } catch (err) {}
   };

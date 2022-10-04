@@ -1,6 +1,6 @@
 import React from "react";
 import "./userCard.css";
-const imgFolder = "http://localhost:5001/images/";
+const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
 const UserCard = ({ user, profileUser, setProfileUser }) => {
   const changeState = (e) => {
