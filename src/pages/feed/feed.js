@@ -30,7 +30,6 @@ function Feed() {
       username: user.user.username,
       desc,
     };
-
     try {
       await axios.post("https://squeak-backend.herokuapp.com/api/posts/", newSqueak);
       window.location.reload();
