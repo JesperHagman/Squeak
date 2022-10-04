@@ -5,11 +5,15 @@ import Header from "../../components/headerComponent/header";
 import axios from "axios";
 import { Context } from "../../context/context";
 import { Hamburger } from "../../components/hamburger/hamburger";
+import Explore from "../../components/explore/explore";
+import Profile from "../profile/profile";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [desc, setDesc] = useState("");
   const { user } = useContext(Context);
+  const [profileUser, setProfileUser] = useState("");
+
   const imgFolder = "http://localhost:5001/images/";
 
   useEffect(() => {
@@ -25,7 +29,7 @@ function Feed() {
     e.preventDefault();
     const newSqueak = {
       username: user.user.username,
-      desc
+      desc,
     };
 
     try {
@@ -51,6 +55,7 @@ function Feed() {
                 Squeak
               </button>
             </form>
+
             <div className="squeak-container">
               <div className="post-container">
                 {posts.map((p) => (
@@ -66,12 +71,20 @@ function Feed() {
             <img
               src={imgFolder + user.user.profilePic}
               className="profilePic"
-              alt= "hej"
+              alt="hej"
             />
             <h4>{user.user.username}</h4>
           </div>
+          <h4>EXPLORE</h4>
+          <div className="explore">
+            <Explore
+              profileUser={profileUser}
+              setProfileUser={setProfileUser}
+            />
+          </div>
         </div>
       </div>
+      <Profile profileUser={profileUser} />
     </>
   );
 }
