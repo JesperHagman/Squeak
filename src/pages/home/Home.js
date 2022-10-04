@@ -20,7 +20,7 @@ const Home = () => {
       <main>
         <img
           id="squeak-logo"
-          src="/img/squeak-inverted2.png"
+          src="/img/squeak.png"
           alt="Squeak logo"
         />
         <h1>SQUEAK</h1>

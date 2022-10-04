@@ -21,10 +21,11 @@
 }
 .home-container aside {
   justify-self: end;
+  border-right: 1px solid white;
+  padding: 0 100px;
 }
 .home-container main {
   justify-self: start;
-  border-left: 1px solid white;
 }
 
 @keyframes example2 {
@@ -82,7 +83,7 @@
 }
 
 #squeak-logo {
-  width: 75%;
+  width: 90%;
   border: none;
   margin: 0;
 }
