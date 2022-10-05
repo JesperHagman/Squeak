@@ -162,7 +162,7 @@ export default function Account() {
                   <p>New password</p>{" "}
                 </label>
               </span>
-              <span id="profilePic-span" className="form-group">
+              <span className="form-group">
                 <input type="password" 
                 className="form-input"/>
                 <label className="form-label">
