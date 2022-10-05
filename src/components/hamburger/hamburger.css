@@ -31,9 +31,7 @@
     position: absolute;
     top: -7px;
     left: -5px;
-
     cursor: pointer;
-
     opacity: 0;
     z-index: 2;
 
@@ -83,7 +81,6 @@
 
   #menu {
     position: absolute;
-    width: 300px;
     margin: -42px 0 0 -20px;
     padding: 50px;
     padding-top: 125px;
@@ -92,23 +89,29 @@
 
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   }
 
   #menu li {
     padding: 5px 0;
     font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   #menuToggle input:checked ~ ul {
     transform: none;
-    width: 200px;
+    width: 200px; 
     height: 100vh;
   }
   #menu p {
     text-align: center;
     padding: 10px;
+  }
+  .arrow{
+    font-size: 20px;
+    display: none;
   }
 
   @media only screen and (max-width: 1230px) {
@@ -129,4 +132,29 @@
     .profile-upper{
       padding:0;
     }
+    #menuToggle input:checked ~ ul {
+      width:100vw
+    }
+    #menu p{
+      text-align: left;
+    }
+    #menu li{
+      margin-right: 60px;
+      border-bottom: 1px solid rgb(202, 202, 202);
+    }
+    #menu{
+      padding-left:40px;
+    }
+    .arrow{
+      display:inline-block;
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    #menu{
+      padding-left:20px;
+    }
+    #menu li{
+      margin-right: 40px;
+    }
+    
   }

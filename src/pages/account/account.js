@@ -2,8 +2,7 @@ import React from "react";
 import Header from "../../components/headerComponent/header";
 import "./accountStyle.css";
 import { Context } from "../../context/context";
-import { useContext } from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { Hamburger } from "../../components/hamburger/hamburger";
 

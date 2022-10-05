@@ -22,7 +22,6 @@ function App() {
         <Route path="/register" element={user ? <Feed /> : <Register />} />
         <Route path="/feed" element={user ? <Feed /> : <Home />} />
         <Route path="/account" element={user ? <Account /> : <Home />} />
-        <Route path="/logintest" element={user ? <Feed /> : <Home />} />
         <Route path="/squeaks" element={user ? <Squeaks /> : <Home />} />
         <Route path="/profil" element={user ? <Squeaks /> : <Home />} />
         <Route
