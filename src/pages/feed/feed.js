@@ -17,7 +17,9 @@ function Feed() {
   const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
   const fetchPosts = async () => {
-    const res = await axios.get("https://squeak-backend.herokuapp.com/api/posts");
+    const res = await axios.get(
+      "https://squeak-backend.herokuapp.com/api/posts"
+    );
     setPosts(res.data);
   };
   useEffect(() => {
@@ -31,7 +33,10 @@ function Feed() {
       desc,
     };
     try {
-      await axios.post("https://squeak-backend.herokuapp.com/api/posts/", newSqueak);
+      await axios.post(
+        "https://squeak-backend.herokuapp.com/api/posts/",
+        newSqueak
+      );
       window.location.reload();
     } catch (err) {}
   };
@@ -82,7 +87,6 @@ function Feed() {
           </div>
         </div>
       </div>
-      <Profile profileUser={profileUser} />
     </>
   );
 }

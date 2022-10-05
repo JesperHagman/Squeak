@@ -1,11 +1,15 @@
 import React from "react";
 import "./userCard.css";
+import { useNavigate } from "react-router-dom";
 const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
 const UserCard = ({ user, profileUser, setProfileUser }) => {
+  const navigate = useNavigate();
   const changeState = (e) => {
     e.preventDefault();
     setProfileUser(user._id);
+    console.log(user._id);
+    navigate("/usersprofile?username=" + user.username);
   };
   return (
     <>
