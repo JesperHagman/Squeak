@@ -161,6 +161,9 @@ button:not(:disabled):active {
   overflow-x: hidden;
   width: 70%;
 }
+.squeak-container::-webkit-scrollbar {
+  display: none;
+}
 .post-container {
   padding-top: 60px;
   display: flex;
@@ -193,8 +196,8 @@ button:not(:disabled):active {
   }
 }
 @media only screen and (max-width: 768px) {
-  .squeak-text{
-    width:300px;
+  .squeak-text {
+    width: 300px;
   }
   .feed-container {
     flex-direction: column;
