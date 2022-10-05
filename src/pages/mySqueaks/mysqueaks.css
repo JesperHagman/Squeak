@@ -9,7 +9,7 @@
   width: 100%;
 }
 .mysqueaks-container .post {
-  width: 60%;
+  width: 80%;
 }
 .edit-btn {
   border-color: blue;
@@ -20,4 +20,21 @@
   border-color: red;
   color: rgb(90, 0, 0);
   padding: 8px;
+}
+
+@media only screen and (max-width: 576px) {
+  .main-container{
+    border: 0;
+    flex:8;
+  }
+  .mysqueaks-container .post {
+    width: 95%;
+  }
+  .btn-holder button{
+    padding:10px;
+  }
+  .btn-holder p{
+    line-height: 0;
+    margin-bottom: 20px;
+  }
 }

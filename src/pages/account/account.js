@@ -84,85 +84,92 @@ export default function Account() {
                 {" "}
                 <label>
                   {" "}
-                  <p>Profile Picture</p>
+                  <p>Profile picture</p>
                 </label>
-                <label htmlFor="fileInput" className="iconImg">
-                  <i class="fa-solid fa-images"></i>
-                </label>
-                <img
-                  src={
-                    file
-                      ? URL.createObjectURL(file)
-                      : imgFolder + user.user.profilePic
-                  }
-                  alt=""
-                />{" "}
-                <input
-                  type="file"
-                  id="fileInput"
-                  style={{ display: "none" }}
-                  onChange={(e) => setFile(e.target.files[0])}
-                />
-                <button className="picture-btn" type="submit">
-                  Update Profile picture
-                </button>
+                <span id="small-screen-profile">
+                  <label htmlFor="fileInput" className="iconImg">
+                    <i class="fa-solid fa-images"></i>
+                  </label>
+                  <img
+                    src={
+                      file
+                        ? URL.createObjectURL(file)
+                        : imgFolder + user.user.profilePic
+                    }
+                    alt=""
+                  />{" "}
+                  <input
+                    type="file"
+                    id="fileInput"
+                    style={{ display: "none" }}
+                    onChange={(e) => setFile(e.target.files[0])}
+                  />
+                  <button className="picture-btn" type="submit">
+                    Update Profile picture
+                  </button>
+                </span>
               </span>
             </form>
             <form onSubmit={handleUserInfo}>
-              <span>
-                <label>
-                  <p>Full Name</p>{" "}
-                </label>
+              <span className="form-group">
                 <input
                   type="text"
                   placeholder={user.user.name}
                   onChange={(e) => setName(e.target.value)}
+                  className="form-input"
                 />
-              </span>
-              <span>
-                <label>
-                  <p>Email</p>{" "}
+                <label className="form-label">
+                  <p>Full name</p>{" "}
                 </label>
+              </span>
+              <span className="form-group">
 
                 <input
                   type="email"
                   placeholder={user.user.email}
                   onChange={(e) => setEmail(e.target.value)}
-                />
-              </span>
-              <span id="profilePic-span">
-                <label>
-                  <p>Phone</p>{" "}
+                  className="form-input"
+                  />
+                <label className="form-label">
+                  <p>Email</p>{" "}
                 </label>
+              </span>
+              <span className="form-group">
                 <input
                   type="number"
                   placeholder={user.user.phone}
                   onChange={(e) => setPhone(e.target.value)}
-                />
+                  className="form-input"
+                  />
+                <label className="form-label">
+                  <p>Phone</p>{" "}
+                </label>
               </span>
               <button className="info-button" type="submit">
-                Update Information
+                Update information
               </button>
               <br />
               <br />
             </form>
             <form onSubmit={handlePassword}>
-              <span>
-                <label>
-                  <p>New Password</p>{" "}
-                </label>
+              <span className="form-group">
                 <input
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
-                />
-              </span>
-              <span id="profilePic-span">
-                <label>
-                  <p>Repeat Password</p>{" "}
+                  className="form-input"
+                  />
+                <label className="form-label">
+                  <p>New password</p>{" "}
                 </label>
-                <input type="password" />
               </span>
-              <button className="info-button">Change Password</button>
+              <span id="profilePic-span" className="form-group">
+                <input type="password" 
+                className="form-input"/>
+                <label className="form-label">
+                  <p>Repeat password</p>{" "}
+                </label>
+              </span>
+              <button className="info-button">Change password</button>
             </form>
           </div>
         </div>
