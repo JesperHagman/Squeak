@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./pages/register/Register";
+import Register from "./pages/register/RegisterComponent";
 import ErrorPage from "./pages/404/ErrorPage";
 import Feed from "./pages/feed/feed";
 import Account from "./pages/account/account";
