@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterComponent from "../src/pages/register/Register";
+import RegisterComponent from "../src/pages/register/RegisterComponent";
 import { render } from "@testing-library/react";
 import { screen, fireEvent } from "@testing-library/dom";
 import "@testing-library/jest-dom";
