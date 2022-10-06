@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
 import { useContext } from "react";
-import './hamburger.css'
+import "./hamburger.css";
 import { useState } from "react";
 
 export const Hamburger = () => {
@@ -26,28 +26,28 @@ export const Hamburger = () => {
             <Link to={"/feed"}>
               <li>
                 <p>START</p>
-                <p className="arrow">{'>'}</p>
-              </li>
-            </Link>
-            <Link to="/account">
-              <li>
-                {" "}
-                <p>PROFILE</p>
-                <p className="arrow">{'>'}</p>
+                <p className="arrow">{">"}</p>
               </li>
             </Link>
             <Link to="/squeaks">
               <li>
                 {" "}
-                <p>MY SQUEAKS</p>
-                <p className="arrow">{'>'}</p>
+                <p>PROFILE</p>
+                <p className="arrow">{">"}</p>
+              </li>
+            </Link>
+            <Link to="/account">
+              <li>
+                {" "}
+                <p>SETTINGS</p>
+                <p className="arrow">{">"}</p>
               </li>
             </Link>
             <Link>
               <li onClick={handleLogout}>
                 {" "}
                 <p>LOGOUT</p>
-                <p className="arrow">{'>'}</p>
+                <p className="arrow">{">"}</p>
               </li>
             </Link>
           </ul>
