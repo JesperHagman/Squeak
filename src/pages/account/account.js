@@ -12,6 +12,9 @@ export default function Account() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [file, setFile] = useState(null);
+  const [successPic, setSuccessPic] = useState(false);
+  const [successInfo, setSuccessInfo] = useState(false);
+  const [successPassword, setSuccessPassword] = useState(false);
   const imgFolder = "https://squeak-backend.herokuapp.com/images/";
 
   const { user } = useContext(Context);
@@ -36,6 +39,7 @@ export default function Account() {
         "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedFile
       );
+      setSuccessPic(true);
     } catch (err) {}
   };
 
@@ -53,8 +57,8 @@ export default function Account() {
         "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedInfo
       );
+      setSuccessInfo(true);
     } catch (err) {}
-    window.location.reload();
   };
 
   const handlePassword = async (e) => {
@@ -69,13 +73,14 @@ export default function Account() {
         "https://squeak-backend.herokuapp.com/api/users/" + user.user._id,
         updatedPassword
       );
+      setSuccessPassword(true);
     } catch (err) {}
   };
 
   return (
     <>
       <Header />
-      <div class="profile-container">
+      <div className="profile-container">
         <Hamburger />
         <div className="main-container">
           <div className="settings-container">
@@ -107,6 +112,19 @@ export default function Account() {
                   <button className="picture-btn" type="submit">
                     Update Profile picture
                   </button>
+                  {successPic && (
+                    <span
+                      style={{
+                        color: "green",
+                        textAlign: "right",
+                        marginTop: "20px",
+                        display: "flex",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      Picture has been updated.
+                    </span>
+                  )}
                 </span>
               </span>
             </form>
@@ -123,13 +141,12 @@ export default function Account() {
                 </label>
               </span>
               <span className="form-group">
-
                 <input
                   type="email"
                   placeholder={user.user.email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="form-input"
-                  />
+                />
                 <label className="form-label">
                   <p>Email</p>{" "}
                 </label>
@@ -140,7 +157,7 @@ export default function Account() {
                   placeholder={user.user.phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="form-input"
-                  />
+                />
                 <label className="form-label">
                   <p>Phone</p>{" "}
                 </label>
@@ -148,6 +165,19 @@ export default function Account() {
               <button className="info-button" type="submit">
                 Update information
               </button>
+              {successInfo && (
+                <span
+                  style={{
+                    color: "green",
+                    textAlign: "right",
+                    marginTop: "20px",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  Profile has been updated.
+                </span>
+              )}
               <br />
               <br />
             </form>
@@ -157,7 +187,7 @@ export default function Account() {
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                   className="form-input"
-                  />
+                />
                 <label className="form-label">
                   <p>New password</p>{" "}
                 </label>
@@ -170,6 +200,19 @@ export default function Account() {
                 </label>
               </span>
               <button className="info-button">Change password</button>
+              {successPassword && (
+                <span
+                  style={{
+                    color: "green",
+                    textAlign: "right",
+                    marginTop: "20px",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  Password has been updated.
+                </span>
+              )}
             </form>
           </div>
         </div>
