@@ -76,7 +76,7 @@ export default function Account() {
   return (
     <>
       <Header />
-      <div class="profile-container">
+      <div className="profile-container">
         <Hamburger />
         <div className="main-container">
           <div className="settings-container">
