@@ -59,7 +59,7 @@ const LoginComponent = () => {
         <div>
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="text"
               id="email"
               data-testid="email"
@@ -75,7 +75,7 @@ const LoginComponent = () => {
           </div>
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="password"
               data-testid="password"
               id="password"

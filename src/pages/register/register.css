@@ -6,3 +6,16 @@
   justify-content: center;
   padding-top: 100px;
 }
+
+.small-logo{
+  width:200px;
+}
+.small-logo:hover{
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+  .small-logo{
+    width: 150px;
+  }
+}

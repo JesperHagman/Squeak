@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
 @import "../../general.css";
-
-:root {
-  --light-gray: rgb(186, 186, 186);
-  --body-text: 20px;
-}
-
 .home-container {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -71,17 +65,6 @@
   flex-direction: column;
 }
 
-.user-container section p {
-  font-size: var(--body-text);
-  padding: 10px;
-}
-
-.user-container section p:hover {
-  transition: all ease-in-out 0.2s;
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
 #squeak-logo {
   width: 90%;
   border: none;
@@ -92,9 +75,15 @@
   .home-container {
     grid-template-columns: 1fr 1fr;
   }
+  .home-container aside {
+    padding: 0 75px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
+  .home-container aside {
+    padding: 50px;
+  }
   .home-container h1 {
     font-size: 60px;
   }
@@ -116,13 +105,14 @@
     margin-top: 20px;
     grid-area: main;
     justify-self: center;
-    border-left: none;
     border-bottom: 1px solid white;
     align-self: center;
   }
   .home-container aside {
     grid-area: aside;
     align-self: start;
+    border-right: none;
+    padding: 0;
   }
   #squeak-logo {
     width: 200px;
@@ -130,6 +120,7 @@
 }
 
 @media only screen and (max-width: 576px) {
+  
   .home-container h1 {
     font-size: 40px;
   }
@@ -140,9 +131,6 @@
   label,
   input {
     font-size: 16px;
-  }
-  input {
-    max-width: 150px;
   }
   #squeak-logo {
     width: 150px;

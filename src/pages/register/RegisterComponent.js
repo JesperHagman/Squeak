@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
-import { redirect } from "react-router-dom";
+import {  redirect } from "react-router-dom";
 import { Context } from "../../context/context";
 import "./register.css";
+
 
 const RegisterComponent = () => {
   const { dispatch} = useContext(Context);
@@ -72,6 +73,10 @@ const RegisterComponent = () => {
       data-testid="registerform"
     >
       <form onSubmit={registerHandler}>
+        <a href="/">
+          
+          <img className="small-logo" src="/img/squeak.png" alt="Squeak logo"/>
+        </a>
         <h1>Register here</h1>
 
         <div className="Message" data-testid="errorMessage">
@@ -81,7 +86,7 @@ const RegisterComponent = () => {
         <div>
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="text"
               name="name"
               id="name"
@@ -96,7 +101,7 @@ const RegisterComponent = () => {
 
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="text"
               phone="phone"
               id="phone"
@@ -113,7 +118,7 @@ const RegisterComponent = () => {
 
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="text"
               id="email"
               data-testid="email"
@@ -130,7 +135,7 @@ const RegisterComponent = () => {
 
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="password"
               password="password"
               id="password"
@@ -147,7 +152,7 @@ const RegisterComponent = () => {
 
           <div className="form-group">
             <input
-              className="form-input"
+              className="form-input orange-input"
               type="text"
               name="username"
               id="username"
@@ -171,7 +176,14 @@ const RegisterComponent = () => {
             Register
           </button>
         </div>
+        <a href="/">
+
+          <p className="p-hover">
+              Already a user? Log in
+        </p>
+        </a>
       </form>
+      
     </div>
   );
 };

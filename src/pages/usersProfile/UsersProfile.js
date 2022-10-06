@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/headerComponent/header";
 import Post from "../../components/postComponent/post";
@@ -10,34 +10,50 @@ function UsersProfile(post) {
   });
   let username = params.username;
   const fetchAdress = `https://squeak-backend.herokuapp.com/api/posts?user=${username}`;
+  const fetchUsers = `https://squeak-backend.herokuapp.com/api/users?user=${username}`;
+  const imgFolder = "https://squeak-backend.herokuapp.com/images/";
   const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState({});
+
+  const fetchPosts = async () => {
+    const res = await axios.get(fetchAdress);
+    setPosts(res.data);
+  };
+  const fetchUser = async () => {
+    const res = await axios.get(fetchUsers);
+    setUser(res.data[0]);
+  };
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await axios.get(fetchAdress);
-      setPosts(res.data);
-    };
     fetchPosts();
+    fetchUser();
   }, []);
-
+  console.log(user);
   return (
     <>
-    <Header />
-    <div className="profile-container">
-      <Hamburger></Hamburger>
-      <div className="main-container  mysqueaks-container">
-        <h2> {username}'s Squeak</h2>
-        <div className="squeak-container">
-          <div className="post-container">
-            {posts.map((post) => (
-              <Post post={post}/>
-            ))}
+      <Header />
+      <div className="profile-container">
+        <Hamburger></Hamburger>
+        <div className="main-container  mysqueaks-container">
+          <h2> {username}'s Squeak</h2>
+          <img
+              src={imgFolder + user.profilePic}
+              className="profilePic"
+              alt="Profile img could not load"
+            />
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
+          <div className="squeak-container">
+            <div className="post-container">
+              {posts.map((post) => (
+                <Post post={post} />
+              ))}
+            </div>
           </div>
         </div>
+        <div className="right-container"></div>
       </div>
-      <div className="right-container"></div>
-    </div>
-  </>
+    </>
   );
 }
 

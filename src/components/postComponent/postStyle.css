@@ -37,6 +37,7 @@
   height: 50%;
   display: flex;
   justify-content: space-between;
+  align-items: end;
 }
 .post-bottom a {
   text-decoration: none;
@@ -57,4 +58,19 @@
 .post-username {
   color: white;
   text-decoration: none;
+}
+.btn-holder{
+  text-align: center;
+}
+.btn-holder button{
+ margin: 0 10px;
+ font-size: 16px;
+}
+.btn-holder button:nth-child(2){
+  border-color: red;
+  border-width: 2px;
+}
+.btn-holder button:nth-child(3){
+  border-color: green;
+  border-width: 2px;
 }
