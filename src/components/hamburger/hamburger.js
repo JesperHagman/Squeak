@@ -11,32 +11,37 @@ export const Hamburger = () => {
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
+  const handleClick = (path) => {
+    if(window.location.pathname === path){
+      window.location.reload()
+    }
+  }
+  console.log(window.location.pathname)
 
   return (
     <div className="left-container">
       <nav role="navigation">
         <div id="menuToggle">
           <input type="checkbox" />
-
           <span></span>
           <span></span>
           <span></span>
 
           <ul id="menu">
-            <Link to={"/feed"}>
+            <Link to="/feed" onClick={() => handleClick('/feed')}>
               <li>
                 <p>START</p>
                 <p className="arrow">{'>'}</p>
               </li>
             </Link>
-            <Link to="/account">
+            <Link to="/account" onClick={() => handleClick('/account')}>
               <li>
                 {" "}
                 <p>PROFILE</p>
                 <p className="arrow">{'>'}</p>
               </li>
             </Link>
-            <Link to="/squeaks">
+            <Link to="/squeaks" onClick={() => handleClick('/squeaks')}>
               <li>
                 {" "}
                 <p>MY SQUEAKS</p>
