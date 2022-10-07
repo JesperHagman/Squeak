@@ -11,6 +11,7 @@ import Post from "../../components/postComponent/post";
 import "./mysqueaks.css";
 
 export default function Squeaks() {
+  const imgFolder = "https://squeak-backend.herokuapp.com/images/";
   const { dispatch, user } = useContext(Context);
   const [squeaks, setSqueaks] = useState([]);
   const username = user.user.username;
@@ -20,8 +21,7 @@ export default function Squeaks() {
     try {
       const res = await axios.get(fetchAdress);
       setSqueaks(res.data);
-    } catch (error) {
-    }
+    } catch (error) {}
   };
   useEffect(() => {
     fetchPosts();
@@ -31,13 +31,32 @@ export default function Squeaks() {
       <Header />
       <div className="profile-container">
         <Hamburger></Hamburger>
-        <div className="main-container  mysqueaks-container">
-          <h2>My Squeaks</h2>
-          <div className="squeak-container">
-            <div className="post-container">
-              {squeaks.map((squeak) => (
-                <Post post={squeak} editable={true} />
-              ))}
+
+        <div className="main-container ">
+          <div className="leftDiv">
+            <div className="picContainer">
+              <div className="leftPicholder">
+                <img
+                  src={imgFolder + user.user.profilePic}
+                  className="pic"
+                  alt="Profile img could not load"
+                />
+                <h2> {username}</h2>
+              </div>
+              <div className="infoContainer">
+                {" "}
+                <h3>{user.user.name}</h3>
+                <h5>{user.user.email}</h5>
+              </div>
+            </div>
+          </div>
+          <div className="rightDiv">
+            <div className="squeakUser-container">
+              <div className="postUser-container">
+                {squeaks.map((squeak) => (
+                  <Post post={squeak} editable={true} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

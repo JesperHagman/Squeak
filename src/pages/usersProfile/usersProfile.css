@@ -1,0 +1,65 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+.leftDiv {
+  padding-top: 50px;
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.rightDiv {
+  overflow-x: scroll;
+}
+.pic {
+  border-radius: 50%;
+  height: 100px;
+}
+.picContainer {
+  margin-top: 1px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  flex-direction: row;
+}
+.infoContainer {
+  margin-left: 10%;
+}
+.leftPicholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.squeakUser-container {
+  padding-bottom: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.073);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.postUser-container {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .leftDiv {
+    padding-top: 50px;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+  }
+}

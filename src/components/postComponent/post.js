@@ -7,35 +7,34 @@ import "./postStyle.css";
 import { useState } from "react";
 
 function Post({ post, editable }) {
-  const { dispatch, user } = useContext(Context)
-  const [verification, setVerification] = useState(false)
+  const { dispatch, user } = useContext(Context);
+  const [verification, setVerification] = useState(false);
   const username = user.user.username;
   const handleInitialClick = () => {
-    setVerification(true)
-  }
+    setVerification(true);
+  };
   const handleDelete = async (id) => {
     const postID = id;
-    const fetchAdress = `https://squeak-backend.herokuapp.com/api/posts/${postID}`
+    const fetchAdress = `https://squeak-backend.herokuapp.com/api/posts/${postID}`;
     try {
       const res = await axios({
-        method: 'DELETE',
+        method: "DELETE",
         url: fetchAdress,
-        headers: {}, 
+        headers: {},
         data: {
           username: username, // This is the body part
-        }
+        },
       });
 
-     window.location.reload()
+      window.location.reload();
+    } catch (err) {
+      throw new Error(err);
+    }
+    setVerification(false);
+  };
 
-    }catch(err) {
-      throw new Error(err)
-    }
-    setVerification(false)
-    }
-  
   return (
-    <div className="post">
+    <div className="post ">
       <div className="post-top">
         {" "}
         <p className="post-p">{post.desc}</p>
@@ -44,13 +43,12 @@ function Post({ post, editable }) {
         {" "}
         <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
         {editable ? (
-          verification ? ( 
-          <div className="btn-holder">
-            <p>Are you sure?</p>
+          verification ? (
+            <div className="btn-holder">
+              <p>Are you sure?</p>
               <button onClick={() => handleDelete(post._id)}>Yes</button>
               <button onClick={() => setVerification(false)}>No</button>
-           </div>
-                      
+            </div>
           ) : (
             <button
               onClick={() => {
@@ -60,11 +58,9 @@ function Post({ post, editable }) {
             >
               Delete
             </button>
-           
-           
           )
         ) : (
-          <Link to= {`/usersprofile?username=${post.username}`}>
+          <Link to={`/usersprofile?username=${post.username}`}>
             <h4 className="post-username">{post.username}</h4>
           </Link>
         )}
