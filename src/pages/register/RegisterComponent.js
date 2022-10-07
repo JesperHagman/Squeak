@@ -17,6 +17,7 @@ const RegisterComponent = () => {
 
   const registerHandler = async (e) => {
     e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
     const registerUser = {
       name: details.name,
       username: details.username,
@@ -46,7 +47,6 @@ const RegisterComponent = () => {
       setMessage("Please provide a username");
       return message;
     }
-    dispatch({ type: "LOGIN_START" });
     try {
       await fetch("https://squeak-backend.herokuapp.com/api/auth/register", {
         method: "POST",
