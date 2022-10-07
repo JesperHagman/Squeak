@@ -10,6 +10,23 @@ function Post({ post, editable }) {
   const { dispatch, user } = useContext(Context);
   const [verification, setVerification] = useState(false);
   const username = user.user.username;
+  const date = new Date(post.createdAt)
+  let createdAtDate = date.toDateString();
+  const today = new Date().toDateString()
+  
+  if (createdAtDate === today){
+    let hour = date.getHours().toString()
+    let minute = date.getMinutes().toString()
+    if(hour.length === 1){
+      hour = '0' + hour;
+      console.log(hour)
+    }
+    if (minute.length === 1){
+      minute = '0' + minute;
+    }
+    createdAtDate = `Today at ${hour}:${minute}`;
+  }
+
   const handleInitialClick = () => {
     setVerification(true);
   };
@@ -41,7 +58,7 @@ function Post({ post, editable }) {
       </div>
       <div className="post-bottom">
         {" "}
-        <p className="createdAt">{new Date(post.createdAt).toDateString()}</p>
+        <p className="createdAt">{createdAtDate}</p>
         {editable ? (
           verification ? (
             <div className="btn-holder">
