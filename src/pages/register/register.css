@@ -4,9 +4,14 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 100px;
 }
-
+#register-container form{
+  margin:100px;
+}
+#register-container a{
+  text-decoration: none;
+  color:white;
+}
 .small-logo{
   width:200px;
 }
@@ -14,8 +19,15 @@
   cursor: pointer;
 }
 
+
 @media only screen and (max-width: 576px) {
   .small-logo{
     width: 150px;
+  }
+  #register-container{
+    padding:40px;
+  }
+  #register-container form{
+    margin:50px;
   }
 }

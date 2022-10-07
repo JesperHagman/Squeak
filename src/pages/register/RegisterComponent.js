@@ -79,7 +79,7 @@ const RegisterComponent = () => {
         </a>
         <h1>Register here</h1>
 
-        <div className="Message" data-testid="errorMessage">
+        <div className="errorMessage" data-testid="errorMessage">
           {message}
         </div>
 
@@ -177,7 +177,6 @@ const RegisterComponent = () => {
           </button>
         </div>
         <a href="/">
-
           <p className="p-hover">
               Already a user? Log in
         </p>

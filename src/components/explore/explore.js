@@ -20,7 +20,7 @@ const Explore = ({ profileUser, setProfileUser }) => {
       <div className="explore">
         {users.map((p) => (
           <UserCard
-            user={p}
+            exploreUser={p}
             key={p._id}
             profileUser={profileUser}
             setProfileUser={setProfileUser}
