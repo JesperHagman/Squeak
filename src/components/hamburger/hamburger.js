@@ -34,14 +34,14 @@ export const Hamburger = () => {
                 <p className="arrow">{">"}</p>
               </li>
             </Link>
-            <Link to="/squeaks">
+            <Link to="/squeaks" onClick={() => handleClick('/squeaks')}>
               <li>
                 {" "}
                 <p>PROFILE</p>
                 <p className="arrow">{">"}</p>
               </li>
             </Link>
-            <Link to="/account">
+            <Link to="/account" onClick={() => handleClick('/account')}>
               <li>
                 {" "}
                 <p>SETTINGS</p>

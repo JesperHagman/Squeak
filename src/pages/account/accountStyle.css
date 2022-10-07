@@ -28,8 +28,7 @@
   border-left: 2px solid var(--light-gray);
   padding-left: 7px;
   border-radius: 5px;
-  margin-left: 50px;
-  width: 60%;
+  width: 80%;
   height: 40px;
   font-size: 22px;
   background-color: white;
@@ -51,22 +50,26 @@
   text-align: right;
   display: flex;
   align-items: center;
-  width: 100%;
   margin-bottom: 20px;
 }
 .settings-container form{
-  margin-right: 40px;
+  margin: 0px 40px 20px 40px;
 }
-
+.settings-container .form-group{
+  gap:40px;
+}
+.settings-container .form-group label {
+  width: 20%;
+}
 
 
 input:focus {
   outline: none;
 }
-
+.settings-container button{
+  padding: 12px;
+}
 .info-button {
-  padding: 2px;
-  border: none;
   margin-top: 10px;
   font-size: 16px;
   margin-left: 70%;
@@ -75,7 +78,6 @@ input:focus {
 }
 .picture-btn {
   font-size: 16px;
-  margin-left: 150px;
 }
 .picture-btn2 {
   font-size: 15px;
@@ -85,11 +87,19 @@ input:focus {
 }
 #profilePic-span {
   margin-bottom: 20px;
+  direction: ltr;
 }
-
-.iconImg {
+#space-between{
+  width:80%;
+  justify-content: flex-start;
+}
+#space-between button{
+  justify-self: end;
+}
+#iconImg {
   cursor: pointer;
-  width: 100px;
+  width: fit-content;
+  padding:20px;
 }
 .fa-solid,
 .fas {
@@ -101,9 +111,7 @@ input:focus {
 i:hover {
   color: rgb(130, 130, 130);
 }
-label {
-  width: 200px;
-}
+
 
 @media only screen and (max-width: 992px) {
   .left-container{
@@ -138,8 +146,8 @@ label {
     height: 80px;
     width: 80px;
   }
-} 
- 
+}
+
 @media only screen and (max-width: 576px) {
   #profilePic-span{
     flex-direction: column;
@@ -157,5 +165,8 @@ label {
   .main-container{
     border: 0;
     flex:8;
+  }
+  .info-button{
+    margin-left: 40%;
   }
 }

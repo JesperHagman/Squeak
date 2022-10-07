@@ -85,14 +85,14 @@ export default function Account() {
         <div className="main-container">
           <div className="settings-container">
             <form onSubmit={handleFile}>
-              <span id="profilePic-span">
+              <span className="form-group" id="profilePic-span">
                 {" "}
-                <label>
+                <label className="form-label">
                   {" "}
                   <p>Profile picture</p>
                 </label>
-                <span id="small-screen-profile">
-                  <label htmlFor="fileInput" className="iconImg">
+                <span id="space-between">
+                  <label htmlFor="fileInput" id="iconImg">
                     <i class="fa-solid fa-images"></i>
                   </label>
                   <img
